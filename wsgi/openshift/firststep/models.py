@@ -16,9 +16,9 @@ class JournalArticle(models.Model):
     summary = models.CharField(max_length=200)
     pub_date = models.DateTimeField('date published')
     title = models.CharField(max_length=50)
-    small_img = models.FileField()
-    article_img = models.FileField()
-    show_img = models.FileField()
+    small_img = models.FileField(upload_to='journal_article/%Y/%m/%d')
+    article_img = models.FileField(upload_to='journal_article/%Y/%m/%d')
+    show_img = models.FileField(upload_to='journal_article/%Y/%m/%d')
 
     def __unicode__(self):
         return self.title
