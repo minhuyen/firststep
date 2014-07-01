@@ -8,7 +8,7 @@ class Category(models.Model):
     pub_date = models.DateTimeField('date published')
 
     def __unicode__(self):
-        return self.question
+        return self.name
 
 
 class JournalArticle(models.Model):
