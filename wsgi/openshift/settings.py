@@ -99,15 +99,29 @@ TEMPLATE_DIRS = (
 if ON_OPENSHIFT:
      DATABASES = {
          'default': {
-             'ENGINE': 'django.db.backends.sqlite3',
-             'NAME': os.path.join(os.environ['OPENSHIFT_DATA_DIR'], 'db.sqlite3'),
+             #'ENGINE': 'django.db.backends.sqlite3',
+             #'NAME': os.path.join(os.environ['OPENSHIFT_DATA_DIR'], 'db.sqlite3'),
+             'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+             'NAME': 'firststep',                      # Or path to database file if using sqlite3.
+             # The following settings are not used with sqlite3:
+             'USER': 'adminmeCDSmA',
+             'PASSWORD': 'adminmeCDSmA',
+             'HOST': '$OPENSHIFT_MYSQL_DB_HOST',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
+             'PORT': '$OPENSHIFT_MYSQL_DB_PORT',                      # Set to empty string for default.
          }
      }
 else:
      DATABASES = {
          'default': {
-             'ENGINE': 'django.db.backends.sqlite3',
-             'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+             #'ENGINE': 'django.db.backends.sqlite3',
+             #'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+             'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+             'NAME': 'django',                      # Or path to database file if using sqlite3.
+             # The following settings are not used with sqlite3:
+             'USER': 'root',
+             'PASSWORD': 'root',
+             'HOST': 'localhost',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
+             'PORT': '3306',                      # Set to empty string for default.
          }
     }
 
@@ -130,5 +144,5 @@ USE_TZ = True
 STATIC_ROOT = os.path.join(BASE_DIR, '..', 'static')
 STATIC_URL = '/static/'
 
-MEDIA_ROOT = os.path.join(BASE_DIR, '..', 'static/media')
+MEDIA_ROOT = os.path.join(BASE_DIR, '..', 'media')
 MEDIA_URL = '/media/'
