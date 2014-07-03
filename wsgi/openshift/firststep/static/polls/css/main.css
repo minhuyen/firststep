@@ -1,0 +1,272 @@
+/* Desktop */
+@import url('jquery.bxslider.css');
+
+body {	width: 100%; margin: 0; padding: 0; 
+	overflow-x: hidden; overflow-y: scroll;  }
+
+/* Menu */
+header, footer { background: black; color: white; text-align: center;
+	font-family: "arial", Times New Roman, sans-serif;
+}
+header ul, footer ul {
+	list-style: none; line-height: 70px;
+	margin: 0 auto;	padding: 0;
+	width: 980px;	height: 70px;	
+}
+header ul li { padding: 0 11.1px; float: left; }
+header ul li a {text-decoration: none;color: white;}
+header ul li a:hover { color: chartreuse; }
+/* # menu */
+
+/* Footer */
+footer ul li { padding: 0 50px 0 53px; float: left;}
+footer ul li:last-child { color: #292829; float: right; padding: 0 11px 0 0; }
+footer ul li img { width: 32px; height: 32px; margin-left: -42px; 
+	position: absolute; margin-top: 18px;}
+/* #Footer*/
+
+/* contact */
+.contact-img-top { position: relative; width: 100%; padding-bottom: 24.21875%; }
+.contact-img-top img { position: absolute; top: 0; left: 0;
+	width: 100%; height: 100%; 
+}
+
+section#contact { width: 980px; position: relative; overflow: hidden; margin: 30px auto;}
+.infor { width: 340px;float: left;padding: 0 20px 0 0; text-align: right; }
+.form { width: 600px;padding-left: 20px;float: left;}
+section#contact p { margin: 0; font-size: 16px; font-family: "arial", Tahoma, sans-serif; 
+	line-height: 25px; }
+.title { font-size: 34px !important; line-height: normal !important;}
+
+.label { width: 80px; float: left;}
+
+select { border: 1px solid black; float: left; height: 24px; margin: 0 0 0 -40px;}
+#firstname, #lastname { width: 160px; border: 1px solid black; height: 20px; float: left; margin: 0 0 0 4px; }
+.left10 { margin:  0 0 0 10px !important; }
+#address, #mobile { width: 222px; border: 1px solid black; height: 20px; float: left;}
+
+.clear { clear: both; width:0; height:0; padding-bottom:30px; }
+
+#address, #mobile, .addmobile { float: left;}
+#address { margin: 0 0 0 -3px; }
+#mobile { margin: 0 0 0 -16px; }
+textarea { width: 516px; max-width: 516px; margin: 0 0 0 -3px; height: 167px; }
+.topbot { margin: 5px 0 20px 0 !important; }
+button { background: black; color: white; width: 96px; height: 44px; text-align: center;
+	border: none;font-size: 16px;font-family: "Arial", tahoma, sans-serif;float: right;margin-top: 15px;
+}
+/* # contact */
+
+
+/* Detail */
+.title-detail { font-size: 30px !important; line-height: normal !important;
+	padding-bottom: 30px; text-align: center;}
+.small-img-detail { position: relative; width: 100%; padding-bottom: 61%; }
+.small-img-detail img { position: absolute; width: 100%; height: 100%; top: 0;	left: 0;}
+/* Detail */
+
+
+
+/* Tin */
+section#tin { width: 100%; position: relative; margin: 0; padding: 0; overflow: hidden;}
+section#tin .imgTin { position: relative; width: 66%; padding-bottom: 33%; float: left;}
+section#tin .imgTin img { position: absolute; width: 100%; height: 100%; top: 0; left: 0; }
+section#tin .infor-tin { position: relative;width: 34%; float: left;}
+section#tin .infor-tin div { width: 230px; height: 180px; margin: 15% auto 0 auto; position: relative; 
+	text-align: left; 	font-size: 16px; font-family: "Arial", Tahoma,sans-serif;  }
+section#tin .infor-tin div a { width: 96px;height: 35px;border: 1px solid black;
+	color: black;text-align: center;position: relative;display: block;	text-decoration: none;
+	line-height: 35px;
+}
+section#tin .infor-tin div a:hover { border: 1px solid blue; color: blue; }
+.title-tin { font-size: 25px !important;  margin: 0; padding: 0;}
+/* Tin */
+
+
+
+
+
+
+
+
+/* slider-top homePage*/
+section#slider-top, section#slider-bot { width: 100%; position: relative;}
+section#slider-top ul, section#slider-bot ul { padding: 0; margin: 0; }
+section#slider-top ul li { position: relative !important; width: 100% !important;
+	padding-bottom: 57%;  }
+section#slider-top ul li img, section#slider-top ul li div, section#slider-bot ul li img,
+section#slider-bot ul li div.bg  { 
+	position: absolute; width: 100%; height: 100%;	top: 0; left: 0; }	
+section#slider-top ul li div { background: black; opacity: 0.5; z-index: 1;}
+
+section#slider-top ul li a {
+	border: 1px solid white; z-index: 4;
+	width: 123px;	height: 40px; color: white;
+	position: absolute; bottom: 20%;
+	top: 0; left: 0; right: 0; margin: auto auto 0 auto;
+	text-align: center; text-decoration: none;
+	font-size: 16px; line-height: 40px;
+}
+section#slider-top ul li a:hover { color: chartreuse; border-color: chartreuse; }
+section#slider-top ul li p { 
+	color: white; z-index: 4; font-size: 37px;
+	position: absolute; bottom: 42%;
+	line-height: normal;
+	width: 90%; text-align: center; 
+	left: 0; right: 0; margin: 0 auto;
+}
+/*  # slider-top homePage*/
+
+
+/* slider-bot */
+section#slider-bot { margin-bottom: -60px; overflow: hidden; }
+section#slider-bot ul li { position: relative !important; width: 100% !important;
+	/*padding-bottom: 34%; */
+	 }
+section#slider-bot ul li div:first-child { 
+	position: relative; width: 100%;
+	padding-bottom: 34%; z-index: 1;
+}
+section#slider-bot ul li div.bg { background: url(../images/icon/bgvideo.png); z-index: 4;}
+section#slider-bot ul li div.infor-sliderbot {
+	position: absolute; width: 600px; 
+	top: 20%; left: 20%; right: 0; border: 0;
+	text-align: left;
+	font-size: 20px;
+	z-index: 4; color: white;
+}
+
+section#slider-bot ul li div.infor-sliderbot p { 
+	margin: 0; font-size: 36px; line-height: normal;
+}
+section#slider-bot ul li div.infor-sliderbot p:first-child, 
+section#slider-bot ul li div.infor-sliderbot p:last-child {
+	font-size: 20px !important; line-height: 25px !important;
+}
+
+/* # slider -bot */
+
+
+
+/* news-2columns - HomePage */
+section#news-2columns {
+	position: relative;	display: block;
+	width: 100%; margin-top: -60px;
+	overflow: hidden;
+}
+
+section#news-2columns div:first-child {
+	width: 66.6666%; float: left;
+	display: inline-block;
+	padding-bottom: 33.3333%;
+	position: relative;
+
+}
+section#news-2columns div:last-child {
+	width: 33.3333%; float: left;
+	display: inline-block;
+	padding-bottom: 33.3333%;
+	position: relative;
+
+}
+section#news-2columns div img {
+	position: absolute;
+	width: 100%; height: 100%;
+	top: 0; left: 0;
+}
+section#news-2columns div:first-child div {
+	position: absolute;
+	left: 0; right: 0; bottom: 0;
+	width: 100%;	height: 60px; 
+	padding: 0; font-size: 20px;
+	line-height: 60px; color: white;
+	background: url(../images/icon/bgvideo.png);
+}
+
+section#news-2columns div:first-child div p {
+	margin: 0 0 0 30px;
+	font-family: "arial", times new roman, sans-serif;
+}
+
+/* # news-2columns - HomePage */
+
+
+/* news-3columns - HomePage */
+section#news-2columns {
+	position: relative;
+	width: 100%; overflow: hidden;
+
+}
+section#news-3columns .block-33 {
+	position: relative; display: inline-block;
+	width: 33.3333%; padding:0 0 35% 0;
+	float: left; margin: 0;
+}
+section#news-3columns .block-33 .bg-gray {
+	background: #181818;  position: absolute; width: 100%;
+	height: 100%;
+	top: 0; left: 0;
+}
+section#news-3columns .block-33 img {
+	position: absolute; width: 100%;
+	height: 100%;
+	top: 0; left: 0;
+}
+
+section#news-3columns .block-33 .title {
+	font-size: 20px !important; text-align: center;
+	color: white; margin: 30px auto;
+}
+
+section#news-3columns .block-33 .sum {
+	font-size: 16px; text-align: center;
+	color: white; margin: 0 auto; width: 57%;
+}
+
+section#news-3columns .block-33 a {
+	border: 1px solid white;	z-index: 4;
+	width: 120px;	height: 40px;
+	color: white;	position: absolute;
+	bottom: 20%;	top: 0;
+	left: 0;	right: 0;
+	margin: auto auto 0 auto;
+	text-align: center;	text-decoration: none;
+	font-size: 16px;	line-height: 40px;
+}
+/* # news-3columns - HomePage */
+
+
+/* # Desktop */
+
+
+
+
+
+
+
+
+/* Ipad */
+@media only screen and (min-width: 768px) and (max-width: 1020px ) {
+	/* menu */
+	header ul li { padding: 0 1.5%; width: 22%; margin-top:10px; }
+	header ul {	line-height: 20px;	width: 100%; }
+	/* # menu */
+
+	/* footer */
+	footer ul { width: 100%; text-align: right;} 
+	footer ul li { padding: 0 1% 0 10.5%;  }
+	footer ul li:last-child { display: none; }
+	/* # footer*/
+
+	/* Contact */
+	section#contact {width: 730px;}
+	.infor {width: 100%; float: none; padding: 0; text-align: center; }
+	.form {width: 600px;padding: 20px 0 0 0;float: none;margin: 0 auto;overflow: hidden;}
+
+	/* # Contact */
+
+
+	/* detail */
+	.small-img-detail {width: 82%;padding-bottom: 50%;margin: 0 auto; }
+	/* # detail */
+}
