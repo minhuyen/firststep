@@ -2,5 +2,5 @@
 
 import openshift.wsgi
 
-# reuse the application callable from openshift.wsgi
+# reuse the application callable from openshift.wsgi   test
 application = openshift.wsgi.application
