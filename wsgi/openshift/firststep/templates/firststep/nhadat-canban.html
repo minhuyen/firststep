@@ -1,0 +1,24 @@
+{% extends 'firststep/base.html' %}
+{% load staticfiles %}
+{% block title %}Tư vấn nhà đất Đà Nẵng{% endblock %}
+{% block content %}
+    {% if hfs_list %}
+        {% for ja in hfs_list %}
+            <section id="tin" class="left-img">
+                <div class="imgTin">
+                    <img src="{{ MEDIA_URL }}{{ ja.article_img }}">
+{#                    <p>{{ ja.article_img }}</p>#}
+                </div>
+                <div class="infor-tin">
+                    <div>
+                        <p class="title-tin">{{ ja.title }} </p>
+                        <p>{{ ja.summary }}</p>
+                        <a href="">read more</a>
+                    </div>
+                </div>
+            </section >
+        {% endfor %}
+    {% else %}
+        <p>No item</p>
+    {% endif %}
+{% endblock %}

@@ -6,9 +6,8 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
-    # Examples:
-    url(r'^$', 'views.home', name='home'),
-    # url(r'^blog/', include('blog.urls')),
-    url(r'^polls/', include('polls.urls', namespace="polls")),
+    # url(r'^$', 'views.home', name='home'),
+    # url(r'^firststep/', include('firststep.urls', namespace="firststep")),
+    url(r'^$', include('firststep.urls', namespace="firststep")),
     url(r'^admin/', include(admin.site.urls)),
 ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

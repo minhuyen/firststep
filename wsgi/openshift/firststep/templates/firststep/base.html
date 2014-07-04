@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'firststep/css/main.css' %}" />
+    <link rel="stylesheet" href="{% static 'firststep/css/jquery.bxslider.css' %}" />
+    <script type="text/javascript" src="{% static 'firststep/js/jquery.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'firststep/js/jquery.bxslider.min.js' %}"></script>
+    <title>{% block title %}First Step{% endblock %}</title>
+</head>
+<body>
+    <header>
+        {% block header%}
+            <ul>
+{#			<li><a href="{% url 'firststep:home' %}">HOME</a></li>#}
+			<li><a href="tintuc.html">TIN TỨC</a></li>
+			<li><a href="datnen-duan.html">ĐẤT NỀN DỰ ÁN</a></li>
+			<li><a href="{% url 'firststep:hfs_list' %}">NHÀ ĐẤT CẦN BÁN</a></li>
+			<li><a href="nhadat-chothue.html">NHÀ ĐẤT CHO THUÊ</a></li>
+			<li><a href="bietthu-venbien.html">BIỆT THỰ VEN BIỂN</a></li>
+			<li><a href="canho.html">CĂN HỘ</a></li>
+			<li><a href="lienhe.html">LIÊN HỆ</a></li>
+		</ul>
+        {% endblock %}
+    </header>
+    <div id="content">
+        {% block content %}{% endblock %}
+    </div>
+    <footer>
+        {% block footer %}
+		<ul>
+			<li><img src="{% static 'firststep/images/icon/email.png' %}">thanhhuyen2584@gmail.com</li>
+			<li><img src="{% static 'firststep/images/icon/phone.png' %}">+84905 385 835</li>
+			<li><img src="{% static 'firststep/images/icon/global.png' %}">www.huyenpham.com</li>
+			<li>Designed by SamuelKong</li>
+		</ul>
+        {% endblock %}
+	</footer>
+
+    </div>
+</body>
+</html>
