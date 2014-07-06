@@ -7,12 +7,16 @@ from firststep.models import Category,JournalArticle
 def home(request):
     return render(request, 'firststep/home.html')
 
-
 def houseForSaleList(request):
-    category = Category.objects.get(name="home")
-    hfs_list = category.journalarticle_set.order_by('-pub_date')[:3]
-    #hfs_list = JournalArticle.objects.order_by('-pub_date')[:3]
-    context = RequestContext(request, {'hfs_list': hfs_list})
+    try:
+        category = Category.objects.get(name="home")
+    except Category.DoesNotExist:
+        context = {'hfs_list': []}
+    else:
+        hfs_list = category.journalarticle_set.order_by('-pub_date')[:3]
+        #hfs_list = JournalArticle.objects.order_by('-pub_date')[:3]
+        context = {'hfs_list': hfs_list}
+
     return render(request, 'firststep/nhadat-canban.html', context)
 
 
