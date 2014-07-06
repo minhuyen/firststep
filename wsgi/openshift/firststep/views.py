@@ -36,3 +36,6 @@ def news(request):
 def detail(request, ja_id):
     ja = get_object_or_404(JournalArticle, pk=ja_id)
     return render(request, 'firststep/detail.html', {'ja': ja})
+#Hanh.Nguyen add Contact Page
+def contact(request):
+    return render(request, 'firststep/contact.html')

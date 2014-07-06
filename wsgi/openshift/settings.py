@@ -99,26 +99,19 @@ TEMPLATE_DIRS = (
 if ON_OPENSHIFT:
      DATABASES = {
          'default': {
-             'ENGINE': 'django.db.backends.mysql',
-             'NAME': os.environ['OPENSHIFT_APP_NAME'],
-             'USER': os.environ['OPENSHIFT_MYSQL_DB_USERNAME'],
-             'PASSWORD': os.environ['OPENSHIFT_MYSQL_DB_PASSWORD'],
-             'HOST': os.environ['OPENSHIFT_MYSQL_DB_HOST'],
-             'PORT': os.environ['OPENSHIFT_MYSQL_DB_PORT']                    # Set to empty string for default.
+             'ENGINE': 'django.db.backends.sqlite3',
+             'NAME': os.path.join(os.environ['OPENSHIFT_DATA_DIR'], 'db.sqlite3'),
          }
      }
 else:
      DATABASES = {
          'default': {
-             #'ENGINE': 'django.db.backends.sqlite3',
-             #'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-             'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-             'NAME': 'django',                      # Or path to database file if using sqlite3.
-             # The following settings are not used with sqlite3:
-             'USER': 'root',
-             'PASSWORD': 'root',
-             'HOST': 'localhost',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
-             'PORT': '3306',                      # Set to empty string for default.
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': 'django',
+            'USER': 'root',
+            'PASSWORD': 'shinbutchi',
+            'HOST': 'localhost',
+            'PORT': '3306',
          }
     }
 
@@ -141,32 +134,5 @@ USE_TZ = True
 STATIC_ROOT = os.path.join(BASE_DIR, '..', 'static')
 STATIC_URL = '/static/'
 
-if ON_OPENSHIFT:
-    MEDIA_ROOT = os.path.join(os.environ.get('OPENSHIFT_DATA_DIR', ''),'media')
-    MEDIA_URL = '/media/'
-else:
-    MEDIA_ROOT = os.path.join(BASE_DIR, '..', 'static','media')
-    MEDIA_URL = '/media/'
-
-# A sample logging configuration. The only tangible logging
-# performed by this configuration is to send an email to
-# the site admins on every HTTP 500 error.
-# See http://docs.djangoproject.com/en/dev/topics/logging for
-# more details on how to customize your logging configuration.
-LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
-    'handlers': {
-        'mail_admins': {
-            'level': 'ERROR',
-            'class': 'django.utils.log.AdminEmailHandler'
-        }
-    },
-    'loggers': {
-        'django.request': {
-            'handlers': ['mail_admins'],
-            'level': 'ERROR',
-            'propagate': True,
-            },
-        }
-}
+MEDIA_ROOT = os.path.join(BASE_DIR, '..', 'static/media')
+MEDIA_URL = '/media/'

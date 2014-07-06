@@ -1,9 +1,23 @@
-{#{% extends 'firststep/base.html' %}#}
-{#{% load staticfiles %}#}
+{% extends 'firststep/base.html' %}
+{% load staticfiles %}
 {% block title %}Detail{% endblock %}
 {% block content %}
     <div class="contact-img-top">
-{#		<img src="{{ ja. }}">#}
+		<img src="{{ MEDIA_URL }}{{ ja.article_img }}">
 	</div>
+    <section id="contact">
+		<div class="infor">
+			<p class="title-detail">{{ ja.title }}</p>
+			<div class="small-img-detail">
+				<img src="{{ MEDIA_URL }}{{ ja.small_img }}">
+			</div>
+		</div>
+		<!-- # infor -->
 
+		<div class="form">
+			<p>{{ ja.content }}</p>
+
+		</div>
+		<!-- #form -->
+	</section>
 {% endblock %}
