@@ -6,8 +6,6 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
-    # url(r'^$', 'views.home', name='home'),
-    # url(r'^firststep/', include('firststep.urls', namespace="firststep")),
     url(r'^$', include('firststep.urls', namespace="firststep")),
     url(r'^$', 'firststep.views.home', name='home'),
     url(r'^nha-dat-can-ban$', 'firststep.views.house', name='house'),

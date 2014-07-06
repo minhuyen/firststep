@@ -8,6 +8,7 @@ def home(request):
     return render(request, 'firststep/home.html')
 
 
+
 def houseForSaleList(request):
     hfs_list = JournalArticle.objects.order_by('-pub_date')[:3]
     context = RequestContext(request, {'hfs_list': hfs_list})
