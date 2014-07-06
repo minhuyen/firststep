@@ -24,7 +24,7 @@ def news(request):
     try:
         category = Category.objects.get(name="news")
     except Category.DoesNotExist:
-        context = {'hfs_list': [], 'title': "Tin tức", "error_message": ""}
+        context = {'hfs_list': [], 'title': "Tin tuc", "error_message": ""}
     else:
         hfs_list = category.journalarticle_set.order_by('-pub_date')[:3]
         #hfs_list = JournalArticle.objects.order_by('-pub_date')[:3]
