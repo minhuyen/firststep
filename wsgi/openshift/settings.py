@@ -141,8 +141,12 @@ USE_TZ = True
 STATIC_ROOT = os.path.join(BASE_DIR, '..', 'static')
 STATIC_URL = '/static/'
 
-MEDIA_ROOT = os.path.join(os.environ.get('OPENSHIFT_DATA_DIR', ''),'media')
-MEDIA_URL = '/media/'
+if ON_OPENSHIFT:
+    MEDIA_ROOT = os.path.join(os.environ.get('OPENSHIFT_DATA_DIR', ''),'media')
+    MEDIA_URL = '/media/'
+else:
+    MEDIA_ROOT = os.path.join(BASE_DIR, '..', 'static','media')
+    MEDIA_URL = '/media/'
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
