@@ -8,9 +8,10 @@ def home(request):
     return render(request, 'firststep/home.html')
 
 
-
 def houseForSaleList(request):
-    hfs_list = JournalArticle.objects.order_by('-pub_date')[:3]
+    category = Category.objects.get(name="home")
+    hfs_list = category.journalarticle_set.order_by('-pub_date')[:3]
+    #hfs_list = JournalArticle.objects.order_by('-pub_date')[:3]
     context = RequestContext(request, {'hfs_list': hfs_list})
     return render(request, 'firststep/nhadat-canban.html', context)
 
