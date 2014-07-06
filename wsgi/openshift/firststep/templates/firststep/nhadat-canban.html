@@ -5,23 +5,32 @@
     {% if hfs_list %}
         {% for ja in hfs_list %}
             {% if forloop.counter|divisibleby:2 %}
-                even
-            {% else %}
-                odd
-            {% endif %}
-            <section id="tin" class="left-img">
-                <div class="imgTin">
-                    <img src="{{ MEDIA_URL }}{{ ja.article_img }}">
-{#                    <p>{{ ja.article_img }}</p>#}
-                </div>
-                <div class="infor-tin">
-                    <div>
-                        <p class="title-tin">{{ ja.title }} </p>
-                        <p>{{ ja.summary }}</p>
-                        <a href="">read more</a>
+                <section id="tin" class="right-img">
+                    <div class="infor-tin">
+                        <div>
+                            <p class="title-tin">{{ ja.title }} </p>
+                            <p>{{ ja.summary }}</p>
+                            <a href="">read more</a>
+                        </div>
                     </div>
-                </div>
-            </section >
+                    <div class="imgTin">
+                        <img src="{{ MEDIA_URL }}{{ ja.article_img }}">
+                    </div>
+                </section >
+            {% else %}
+                <section id="tin" class="left-img">
+                    <div class="imgTin">
+                        <img src="{{ MEDIA_URL }}{{ ja.article_img }}">
+                    </div>
+                    <div class="infor-tin">
+                        <div>
+                            <p class="title-tin">{{ ja.title }} </p>
+                            <p>{{ ja.summary }}</p>
+                            <a href="">read more</a>
+                        </div>
+                    </div>
+                </section >
+            {% endif %}
         {% endfor %}
     {% else %}
         <p>No item</p>
