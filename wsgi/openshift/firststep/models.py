@@ -14,6 +14,7 @@ class Category(models.Model):
 class JournalArticle(models.Model):
     category = models.ForeignKey(Category)
     summary = models.CharField(max_length=200)
+    content = models.CharField(max_length=1000)
     pub_date = models.DateTimeField('date published')
     title = models.CharField(max_length=50)
     small_img = models.FileField(upload_to='journal_article/%Y/%m/%d')
