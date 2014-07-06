@@ -20,6 +20,6 @@ def houseForSaleList(request):
     return render(request, 'firststep/nhadat-canban.html', context)
 
 
-# def detail(request, ja_id):
-#     ja = get_object_or_404(JournalArticle, pk=ja_id)
-#     return render(request, 'firststep/detail.html', {'ja':ja})
+def detail(request, ja_id):
+    ja = get_object_or_404(JournalArticle, pk=ja_id)
+    return render(request, 'firststep/detail.html', {'ja': ja})
