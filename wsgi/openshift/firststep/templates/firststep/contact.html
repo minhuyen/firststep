@@ -1,0 +1,68 @@
+{% extends 'firststep/base.html' %}
+{% load staticfiles %}
+{% block title %}Tư vấn nhà đất Đà Nẵng{% endblock %}
+{% block content %}
+   <html>
+
+
+
+<body>
+	
+
+	<div class="contact-img-top">
+		<img src="{% static 'firststep/images/contact.jpg' %}">
+	</div>
+	<!-- # contact-img-top -->
+
+	
+
+	<section id="contact">
+		<div class="infor">
+			<p class="title">Thông tin liên hệ:</p>
+			<p>Công ty CP Đất Xanh Miền Trung</p>
+			<p>Địa chỉ: 422 đường 2/9, Hải Châu, TP. Đà Nẵng</p>
+			<br><br>
+			<p class="title">Chuyên viên tư vấn và phân tích:</p>
+			<p>Huyền Phạm</p>
+			<p>Di động: 0935 393 885</p>
+			<p>Email: huyenpham@gmail.com</p>
+			<p>Website: www.huyenpham.com</p>
+		</div>
+		<!-- # infor -->
+
+		<div class="form">
+			<p>Dự án Ngân Câu Ngân Giang nằm cạnh trường Đại học Nội Vụ, Đại học Mỹ Thái Bình Dương: Cách biển 1.5 Km, cạnh sân golf Vinacapital, Khu biệt thự Triệu đô, Resort 5 sao,... Hạ tầng hoàn thiện, công viên cây xanh đã được hình thành. Bắt nguồn từ việc mặt bằng nguyên sơ bằng phẳng với kết cấu địa chất tốt nên việc xây dựng hạ tầng được tiến hành nhanh chóng.</p>
+
+			<p class="title topbot">Form liên hệ</p>
+
+			<p class="label">Title</p>
+			<select>
+				<option value="mr">Mr</option>
+				<option value="mrs">Mrs</option>
+			</select>
+			<p class="label left10">First name</p>
+			<input class="" id="firstname" type="text" value>
+			<p class="label left10">Last name</p>
+			<input class="" id="lastname" type="text" value>
+			<div class="clear"></div>
+
+			<p class="label addmobile">Address</p>
+			<input class="" id="address" type="text" value>
+			<p class="label addmobile left10">Mobile</p>
+			<input class="" id="mobile" type="text" value>
+			<div class="clear"></div>
+
+			<p class="label">Message</p>
+			<textarea class="" id="comment" ></textarea>
+			<button type="button">Send</button>
+
+		</div>
+		<!-- #form -->
+	</section>
+	<!-- # contact -->
+
+</body>
+
+</html>
+{% endblock %}
+
