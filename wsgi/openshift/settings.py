@@ -56,7 +56,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'polls',
     'firststep',
-
+    'redactor',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -170,3 +170,10 @@ LOGGING = {
             },
         }
 }
+
+REDACTOR_OPTIONS = {'lang': 'en',
+                    "imageUpload": "false",
+                    "linkFileUpload": "false",
+                    "fileUpload": "false",
+                    }
+REDACTOR_UPLOAD = 'uploads/'
