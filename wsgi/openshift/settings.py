@@ -13,7 +13,7 @@ import imp
 
 ON_OPENSHIFT = False
 if os.environ.has_key('OPENSHIFT_REPO_DIR'):
-    ON_OPENSHIFT = True
+     ON_OPENSHIFT = True
 
 BASE_DIR = os.path.dirname(os.path.realpath(__file__))
 
@@ -26,24 +26,24 @@ BASE_DIR = os.path.dirname(os.path.realpath(__file__))
 default_keys = { 'SECRET_KEY': 'vm4rl5*ymb@2&d_(gc$gb-^twq9w(u69hi--%$5xrh!xk(t%hw' }
 use_keys = default_keys
 if ON_OPENSHIFT:
-    imp.find_module('openshiftlibs')
-    import openshiftlibs
-    use_keys = openshiftlibs.openshift_secure(default_keys)
+     imp.find_module('openshiftlibs')
+     import openshiftlibs
+     use_keys = openshiftlibs.openshift_secure(default_keys)
 
 SECRET_KEY = use_keys['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
 if ON_OPENSHIFT:
-    DEBUG = False
+     DEBUG = False
 else:
-    DEBUG = True
+     DEBUG = True
 
 TEMPLATE_DEBUG = DEBUG
 
 if DEBUG:
-    ALLOWED_HOSTS = []
+     ALLOWED_HOSTS = []
 else:
-    ALLOWED_HOSTS = ['*']
+     ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -56,7 +56,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'polls',
     'firststep',
-    'redactor',
+
 )
 
 MIDDLEWARE_CLASSES = (
@@ -81,7 +81,7 @@ if 'REDISCLOUD_URL' in os.environ and 'REDISCLOUD_PORT' in os.environ and 'REDIS
                 'DB':0,
                 'PARSER_CLASS' : 'redis.connection.HiredisParser',
                 'PASSWORD' : redis_password,
-                }
+            }
         }
     }
     MIDDLEWARE_CLASSES = ('django.middleware.cache.UpdateCacheMiddleware',) + MIDDLEWARE_CLASSES + ('django.middleware.cache.FetchFromCacheMiddleware',)
@@ -91,35 +91,28 @@ ROOT_URLCONF = 'urls'
 WSGI_APPLICATION = 'wsgi.application'
 
 TEMPLATE_DIRS = (
-    os.path.join(BASE_DIR,'templates'),
+     os.path.join(BASE_DIR,'templates'),
 )
 
 # Database
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases
 if ON_OPENSHIFT:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.mysql',
-            'NAME': os.environ['OPENSHIFT_APP_NAME'],
-            'USER': os.environ['OPENSHIFT_MYSQL_DB_USERNAME'],
-            'PASSWORD': os.environ['OPENSHIFT_MYSQL_DB_PASSWORD'],
-            'HOST': os.environ['OPENSHIFT_MYSQL_DB_HOST'],
-            'PORT': os.environ['OPENSHIFT_MYSQL_DB_PORT']                    # Set to empty string for default.
-        }
-    }
+     DATABASES = {
+         'default': {
+             'ENGINE': 'django.db.backends.sqlite3',
+             'NAME': os.path.join(os.environ['OPENSHIFT_DATA_DIR'], 'db.sqlite3'),
+         }
+     }
 else:
-    DATABASES = {
-        'default': {
-            #'ENGINE': 'django.db.backends.sqlite3',
-            #'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-            'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-            'NAME': 'django',                      # Or path to database file if using sqlite3.
-            # The following settings are not used with sqlite3:
+     DATABASES = {
+         'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': 'django',
             'USER': 'root',
-            'PASSWORD': 'root',
-            'HOST': 'localhost',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
-            'PORT': '3306',                      # Set to empty string for default.
-        }
+            'PASSWORD': 'shinbutchi',
+            'HOST': 'localhost',
+            'PORT': '3306',
+         }
     }
 
 # Internationalization
@@ -140,13 +133,18 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 STATIC_ROOT = os.path.join(BASE_DIR, '..', 'static')
 STATIC_URL = '/static/'
-if ON_OPENSHIFT:
-    MEDIA_ROOT = os.path.join(os.environ.get('OPENSHIFT_DATA_DIR', ''),'media')
-    MEDIA_URL = '/media/'
 
-else:
-    MEDIA_ROOT = os.path.join(BASE_DIR, '..', 'static','media')
-    MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, '..', 'static/media')
+MEDIA_URL = '/media/'
+
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'nguyenngochanh318@gmail.com'
+EMAIL_HOST_PASSWORD = ''
+DEFAULT_FROM_EMAIL = ''
+DEFAULT_TO_EMAIL = 'nguyenngochanh318@gmail.com'
+
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
