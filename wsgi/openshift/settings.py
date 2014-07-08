@@ -113,7 +113,7 @@ else:
             'ENGINE': 'django.db.backends.mysql',
             'NAME': 'django',
             'USER': 'root',
-            'PASSWORD': 'root',
+            'PASSWORD': '',
             'HOST': 'localhost',
             'PORT': '3306',
          }
@@ -148,10 +148,10 @@ else:
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'nguyenngochanh318@gmail.com'
-EMAIL_HOST_PASSWORD = ''
-DEFAULT_FROM_EMAIL = ''
-DEFAULT_TO_EMAIL = 'nguyenngochanh318@gmail.com'
+EMAIL_HOST_USER = 'englishforyou365@gmail.com'
+EMAIL_HOST_PASSWORD = 'english@123'
+DEFAULT_FROM_EMAIL = 'englishforyou365@gmail.com'
+DEFAULT_TO_EMAIL = ''
 
 
 # A sample logging configuration. The only tangible logging
