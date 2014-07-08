@@ -56,7 +56,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'polls',
     'firststep',
-
+    'redactor',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -99,8 +99,12 @@ TEMPLATE_DIRS = (
 if ON_OPENSHIFT:
      DATABASES = {
          'default': {
-             'ENGINE': 'django.db.backends.sqlite3',
-             'NAME': os.path.join(os.environ['OPENSHIFT_DATA_DIR'], 'db.sqlite3'),
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': os.environ['OPENSHIFT_APP_NAME'],
+            'USER': os.environ['OPENSHIFT_MYSQL_DB_USERNAME'],
+            'PASSWORD': os.environ['OPENSHIFT_MYSQL_DB_PASSWORD'],
+            'HOST': os.environ['OPENSHIFT_MYSQL_DB_HOST'],
+            'PORT': os.environ['OPENSHIFT_MYSQL_DB_PORT']                    # Set to empty string for default.
          }
      }
 else:
@@ -109,7 +113,7 @@ else:
             'ENGINE': 'django.db.backends.mysql',
             'NAME': 'django',
             'USER': 'root',
-            'PASSWORD': 'shinbutchi',
+            'PASSWORD': 'root',
             'HOST': 'localhost',
             'PORT': '3306',
          }
@@ -133,9 +137,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 STATIC_ROOT = os.path.join(BASE_DIR, '..', 'static')
 STATIC_URL = '/static/'
+if ON_OPENSHIFT:
+    MEDIA_ROOT = os.path.join(os.environ.get('OPENSHIFT_DATA_DIR', ''),'media')
+    MEDIA_URL = '/media/'
 
-MEDIA_ROOT = os.path.join(BASE_DIR, '..', 'static/media')
-MEDIA_URL = '/media/'
+else:
+    MEDIA_ROOT = os.path.join(BASE_DIR, '..', 'static','media')
+    MEDIA_URL = '/media/'
 
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
