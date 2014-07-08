@@ -7,6 +7,8 @@ from firststep.models import Category, JournalArticle
 
 
 class JournalArticleAdminForm(forms.ModelForm):
+    summary = forms.CharField(widget=forms.Textarea)
+
     class Meta:
         model = JournalArticle
         widgets = {
