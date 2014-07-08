@@ -2,4 +2,105 @@
 {% load staticfiles %}
 {% block title %}Home{% endblock %}
 {% block content %}
+    {% if list6 %}
+        <section id="slider-top">
+		    <ul class="bxslider-top">
+            {% for ja in list6 %}
+                <li><img src="{{ MEDIA_URL }}{{ ja.article_img }}">
+                    <a href="">read more</a>
+                    <p>{{ ja.summary }}</p>
+                </li>
+            {% endfor %}
+            </ul>
+        </section>
+    {% endif %}
+    <script type="text/javascript">
+		$(document).ready(function() {
+			$('.bxslider-top').bxSlider({
+			  mode: 'fade',
+			  controls: false,
+			  speed: 100,
+			  slideMargin: 0
+			});
+		});
+	</script>
+    {% if list1 %}
+            <section id="news-2columns">
+                <div>
+                    <img src="{{ MEDIA_URL }}{{ list1.0.article_img }}">
+                    <div><p>{{ categoryName1 }}</p></div>
+                </div>
+                <!-- # First div -->
+                <div>
+                    <img src="{{ MEDIA_URL }}{{ list1.0.small_img }}">
+                </div>
+                <!-- # Last Div -->
+            </section>
+    {% endif %}
+    <section id="news-3columns">
+        {% if list2 %}
+                <div class="block-33">
+                    <img src="{{ MEDIA_URL }}{{ list2.0.small_img }}">
+                </div>
+                <div class="block-33">
+                    <div class=" bg-gray">
+                        <p class="title">{{ categoryName2 }}</p>
+                        <p class="sum">{{ list2.0.summary }}</p>
+                        <a href="{% url 'firststep:detail' list2.0.id %}">read more</a>
+                    </div>
+                </div>
+        {% endif %}
+        {% if list3 %}
+                <div class="block-33">
+                    <img src="{{ MEDIA_URL }}{{ list3.0.small_img }}">
+                </div>
+                <div class="block-33 bg-gray">
+                    <div class=" bg-gray">
+                        <p class="title">{{ categoryName3 }}</p>
+                        <p class="sum">{{ list3.0.summary }}</p>
+                        <a href="{% url 'firststep:detail' list3.0.id %}">read more</a>
+                    </div>
+                </div>
+        {% endif %}
+        {% if list4 %}
+                <div class="block-33">
+                    <img src="{{ MEDIA_URL }}{{ list4.0.small_img }}">
+                </div>
+                <div class="block-33 bg-gray">
+                    <div class=" bg-gray">
+                        <p class="title">{{ categoryName4 }}</p>
+                        <p class="sum">{{ list4.0.summary }}</p>
+                        <a href="{% url 'firststep:detail' list4.0.id %}">read more</a>
+                    </div>
+                </div>
+        {% endif %}
+    </section>
+    {% if list5 %}
+        <section id="slider-bot">
+            <ul class="bxslider-bot">
+            {% for ja in list5 %}
+                <li>
+                    <div><img src="{{ MEDIA_URL }}{{ ja.article_img }}"></div>
+                    <div class="bg"></div>
+                    <div class="infor-sliderbot">
+                        <p>{{ categoryName5 }}</p>
+                        <p>{{ ja.title }}</p>
+                        <p>{{ ja.summary }}</p>
+                    </div>
+                </li>
+            {% endfor %}
+            </ul>
+        </section>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $('.bxslider-bot').bxSlider({
+                    mode: 'vertical',
+                    slideMargin: 10,
+                    auto: true,
+                    pause: 5000
+
+                });
+            });
+	    </script>
+    {% endif %}
 {% endblock %}

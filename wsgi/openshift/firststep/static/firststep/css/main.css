@@ -216,6 +216,7 @@ section#news-3columns .block-33 img {
 section#news-3columns .block-33 .title {
 	font-size: 20px !important; text-align: center;
 	color: white; margin: 30px auto;
+    text-transform: uppercase;
 }
 
 section#news-3columns .block-33 .sum {
