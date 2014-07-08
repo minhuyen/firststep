@@ -5,6 +5,7 @@ from redactor.widgets import RedactorEditor
 # Register your models here.
 from firststep.models import Category, JournalArticle
 
+
 class JournalArticleAdminForm(forms.ModelForm):
     class Meta:
         model = JournalArticle
@@ -22,8 +23,21 @@ class JournalArticleAdminForm(forms.ModelForm):
         }
 
 
+class CategoryAdmin(admin.ModelAdmin):
+    fieldsets = [
+        (None,               {'fields': ['name']}),
+        ('Date information', {'fields': ['pub_date']}),
+    ]
+    list_display = ['name', 'pub_date']
+
+
 class JournalArticleAdmin(admin.ModelAdmin):
     form = JournalArticleAdminForm
+    fields = ['category', 'title', 'summary', 'content', 'small_img', 'article_img', 'show_img', 'pub_date']
+    list_display = ['category', 'title', 'summary', 'pub_date']
+    list_filter = ['pub_date']
+    search_fields = ['title']
+    ordering = ['-pub_date']
 
-admin.site.register(Category)
+admin.site.register(Category, CategoryAdmin)
 admin.site.register(JournalArticle, JournalArticleAdmin)
