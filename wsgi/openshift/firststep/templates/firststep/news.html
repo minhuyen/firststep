@@ -2,8 +2,8 @@
 {% load staticfiles %}
 {% block title %}Tư vấn nhà đất Đà Nẵng{% endblock %}
 {% block content %}
-    {% if hfs_list %}
-        {% for ja in hfs_list %}
+    {% if list %}
+        {% for ja in list %}
             {% if forloop.counter|divisibleby:2 %}
                 <section id="tin" class="right-img">
                     <div class="infor-tin">
