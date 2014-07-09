@@ -8,7 +8,64 @@ import logging
 
 logger = logging.getLogger('firststep.views')
 def home(request):
-    return render(request, 'firststep/home.html')
+    try:
+        category1 = Category.objects.get(name="dat-nen-du-an")
+    except Category.DoesNotExist:
+        categoryName1 = ""
+        list1 = []
+    else:
+        categoryName1 = category1.name
+        list1 = category1.journalarticle_set.order_by('-pub_date')[:4]
+
+    try:
+        category2 = Category.objects.get(name="biet-thu-ven-bien")
+    except Category.DoesNotExist:
+        categoryName2 = ""
+        list2 = []
+    else:
+        categoryName2 = category2.name
+        list2 = category2.journalarticle_set.order_by('-pub_date')[:1]
+
+    try:
+        category3 = Category.objects.get(name="nha-dat-can-ban")
+    except Category.DoesNotExist:
+        categoryName3 = ""
+        list3 = []
+    else:
+        categoryName3 = category3.name
+        list3 = category3.journalarticle_set.order_by('-pub_date')[:1]
+
+    try:
+        category4 = Category.objects.get(name="can-ho")
+    except Category.DoesNotExist:
+        categoryName4 = ""
+        list4 = []
+    else:
+        categoryName4 = category4.name
+        list4 = category4.journalarticle_set.order_by('-pub_date')[:1]
+
+    try:
+        category5 = Category.objects.get(name="tin-tuc")
+    except Category.DoesNotExist:
+        categoryName5 = ""
+        list5 = []
+    else:
+        categoryName5 = category5.name
+        list5 = category5.journalarticle_set.order_by('-pub_date')[:4]
+
+    try:
+        category6 = Category.objects.get(name="home")
+    except Category.DoesNotExist:
+        categoryName6 = ""
+        list6 = []
+    else:
+        categoryName6 = category6.name
+        list6 = category6.journalarticle_set.order_by('-pub_date')[:4]
+
+    context = {'list1': list1, 'categoryName1': categoryName1, 'list2': list2, 'categoryName2': categoryName2,
+               'list3': list3, 'categoryName3': categoryName3, 'list4': list4, 'categoryName4': categoryName4,
+               'list5': list5, 'categoryName5': categoryName5, 'list6': list6, 'categoryName6': categoryName6}
+    return render(request, 'firststep/home.html', context)
 
 
 def houseForSaleList(request):
