@@ -117,7 +117,7 @@ def apartmentList(request):
 
 def projectLandList(request):
     try:
-        category = Category.objects.get(name=" dat-nen-du-an")
+        category = Category.objects.get(name="dat-nen-du-an")
     except Category.DoesNotExist:
         context = {'list': []}
     else:
