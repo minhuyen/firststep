@@ -149,13 +149,17 @@ def contact(request):
     return render(request, 'firststep/contact.html')
 
 def sendMail(request):
-    emailAddress = request.POST.get("emailAddress", "")
-    comment = request.POST.get("comment", "")
-    name = request.POST.get("name", "")
-    #send email
-    send_mail(name, comment, emailAddress,
-    [settings.EMAIL_HOST_USER], fail_silently=False)
+    try:
+        emailAddress = request.POST.get("emailAddress", "")
+        comment = request.POST.get("comment", "")
+        name = request.POST.get("name", "")
+        #send email
+        send_mail(name, comment, settings.EMAIL_HOST_USER,
+        ["minhuyendo@gmail.com"], fail_silently=False)
 
-    logger.debug("Come here!!!")
-    return render(request, 'firststep/contact.html')
-    
+        logger.debug("Come here!!!")
+        return render(request, 'firststep/contact.html',{'result':1})
+    except:
+        #print "Unexpected error:", sys.exc_info()[0]
+        #raise
+        return render(request, 'firststep/contact.html',{'result':0})

@@ -15,7 +15,7 @@ urlpatterns = patterns('',
     url(r'^biet-thu-ven-bien/$', 'firststep.views.coastalVillaList', name='coastalVilla'),
     url(r'^can-ho/$', 'firststep.views.apartmentList', name='apartment'),
     url(r'^lien-he$', 'firststep.views.contact', name='contact'),
-    url(r'^haha/$', 'firststep.views.sendMail', name='sendMail'),
+    url(r'^lien-he/$', 'firststep.views.sendMail', name='sendMail'),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^redactor/', include('redactor.urls')),
 ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
