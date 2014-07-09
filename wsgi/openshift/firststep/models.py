@@ -14,7 +14,7 @@ class Category(models.Model):
 
 class JournalArticle(models.Model):
     category = models.ForeignKey(Category)
-    summary = models.CharField(max_length=500)
+    summary = models.CharField(max_length=150)
     content = models.CharField(max_length=10000, verbose_name="Content")
     pub_date = models.DateTimeField('date published')
     title = models.CharField(max_length=50)
