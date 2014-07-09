@@ -118,7 +118,7 @@ def apartmentList(request):
 
 def projectLandList(request):
     try:
-        category = Category.objects.get(name=" dat-nen-du-an")
+        category = Category.objects.get(name="dat-nen-du-an")
     except Category.DoesNotExist:
         context = {'list': []}
     else:
@@ -130,7 +130,7 @@ def projectLandList(request):
 
 def news(request):
     try:
-        category = Category.objects.get(name="news")
+        category = Category.objects.get(name="tin-tuc")
     except Category.DoesNotExist:
         context = {'list': [], 'title': "Tin tuc", "error_message": ""}
     else:
