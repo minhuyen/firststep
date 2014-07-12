@@ -18,12 +18,15 @@
 }
 
 .formError {
-	position: absolute;
-	top: 300px;
-	left: 300px;
-	display: block;
+    position: relative !important;
+    top: 0 !important;
+    left: 170px !important;
+    width: 120px;
+
+    display: block;
 	cursor: pointer;
 	text-align: left;
+
 }
 
 .formError.inline {
