@@ -47,13 +47,37 @@ select { border: 1px solid black; float: left; height: 24px; margin: 0 0 0 -40px
 
 .clear { clear: both; width:0; height:0; padding-bottom:30px; }
 
-#address, #mobile, .addmobile { float: left;}
-#address { margin: 0 0 0 -3px; }
-#mobile { margin: 0 0 0 -16px; }
-textarea { width: 516px; max-width: 516px; margin: 0 0 0 -3px; height: 167px; }
+/*#address, #mobile, .addmobile { float: left;}*/
+/*#address { margin: 0 0 0 -3px; }*/
+/*#mobile { margin: 0 0 0 -16px; }*/
+
+#contact .form input {
+    width: 500px;
+    float: right;
+    height: 25px;
+    border: 1px solid black;
+}
+#contact .form textarea{
+    width: 496px;
+    max-width: 496px;
+    margin: 0;
+    height: 160px;
+    float: right;
+}
 .topbot { margin: 5px 0 20px 0 !important; }
-button { background: black; color: white; width: 96px; height: 44px; text-align: center;
-	border: none;font-size: 16px;font-family: "Arial", tahoma, sans-serif;float: right;margin-top: 15px;
+#contact .form button {
+    background: black;
+    color: white;
+    width: 96px; 
+    height: 44px; 
+    text-align: center;
+	border: none;
+    font-size: 16px;
+    font-family: "Arial", tahoma, sans-serif;
+    float: right;
+    margin-top: 15px;
+    clear: both;
+    line-height: 44px;
 }
 /* # contact */
 
