@@ -3,6 +3,7 @@ from django.shortcuts import render, get_object_or_404
 from django.template import RequestContext
 from firststep.models import Category,JournalArticle
 from django.core.mail import send_mail
+from django.core.mail import EmailMultiAlternatives
 from django.conf import settings
 import logging
 
@@ -117,7 +118,7 @@ def apartmentList(request):
 
 def projectLandList(request):
     try:
-        category = Category.objects.get(name=" dat-nen-du-an")
+        category = Category.objects.get(name="dat-nen-du-an")
     except Category.DoesNotExist:
         context = {'list': []}
     else:
@@ -129,7 +130,7 @@ def projectLandList(request):
 
 def news(request):
     try:
-        category = Category.objects.get(name="news")
+        category = Category.objects.get(name="tin-tuc")
     except Category.DoesNotExist:
         context = {'list': [], 'title': "Tin tuc", "error_message": ""}
     else:
@@ -149,13 +150,31 @@ def contact(request):
     return render(request, 'firststep/contact.html')
 
 def sendMail(request):
-    emailAddress = request.POST.get("emailAddress", "")
-    comment = request.POST.get("comment", "")
-    name = request.POST.get("name", "")
-    #send email
-    send_mail(name, comment, emailAddress,
-    [settings.EMAIL_HOST_USER], fail_silently=False)
+    try:
+        emailAddress = request.POST.get("emailAddress", "")
+        comment = request.POST.get("comment", "")     
+        name = request.POST.get("name", "")
+        phone = request.POST.get("mobile", "")
+        subject, from_email, to = 'Message from'+" "+name, settings.EMAIL_HOST_USER, 'minhuyendo@gmail.com'
+        text_content = 'You have received request from customer.'
+        html_content = '<p>Hi!</p><p>Below is the customer contact information</p><p><strong>Name:</strong> '+name+'</p><p><strong>Email:</strong> '+emailAddress+'</p><p><strong>Phone:</strong> '+phone+'</p><p><strong>Message:</strong></p> <div>'+comment+'</div><p>-----</p>'
+        msg = EmailMultiAlternatives(subject, text_content, from_email, [to])
+        msg.attach_alternative(html_content, "text/html")
+        msg.send()
+        return render(request, 'firststep/contact.html',{'result':1})
+    except:
+        return render(request, 'firststep/contact.html',{'result':0})
+    # try:
+    #     emailAddress = request.POST.get("emailAddress", "")
+    #     comment = request.POST.get("comment", "")
+    #     name = request.POST.get("name", "")
+    #     #send email
+    #     send_mail(name, comment, settings.EMAIL_HOST_USER,
+    #     ["minhuyendo@gmail.com"], fail_silently=False)
 
-    logger.debug("Come here!!!")
-    return render(request, 'firststep/contact.html')
-    
+    #     logger.debug("Come here!!!")
+    #     return render(request, 'firststep/contact.html',{'result':1})
+    # except:
+    #     #print "Unexpected error:", sys.exc_info()[0]
+    #     #raise
+    #     return render(request, 'firststep/contact.html',{'result':0})

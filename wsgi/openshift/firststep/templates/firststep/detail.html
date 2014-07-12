@@ -14,7 +14,9 @@
 		</div>
 		<!-- # infor -->
 		<div class="form">
-			<p>{{ ja.content }}</p>
+            {% autoescape off %}
+			    {{ ja.content }}
+            {% endautoescape %}
 		</div>
 		<!-- #form -->
 	</section>
