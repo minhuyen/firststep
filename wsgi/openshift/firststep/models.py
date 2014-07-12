@@ -7,18 +7,21 @@ from redactor.fields import RedactorField
 
 class Category(models.Model):
     name = models.CharField(max_length=200)
+    cat_key = models.CharField(max_length=200, verbose_name='Key', blank=True)
     pub_date = models.DateTimeField('date published')
     parent = models.ForeignKey('self', blank=True, null=True, related_name="children")
 
     class Admin:
         list_display = ('name', '_parents_repr')
 
-
     def get_absolute_url(self):
         if self.parent_id:
-            return "/category/%s/%s/" % (self.parent.name, self.name)
+            return "/%s/%s/" % (self.parent.cat_key, self.cat_key)
         else:
-            return "/category/%s/" % (self.name, )
+            if self.cat_key == "":
+                return ""
+            else:
+                return "/%s/" % (self.cat_key, )
 
     def _recurse_for_parents(self, cat_obj):
         p_list = []
