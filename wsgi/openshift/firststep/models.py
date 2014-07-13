@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+from datetime import datetime
 from django.core import validators
 from django.db import models
 from redactor.fields import RedactorField
@@ -8,7 +10,8 @@ from redactor.fields import RedactorField
 class Category(models.Model):
     name = models.CharField(max_length=200)
     cat_key = models.CharField(max_length=200, verbose_name='Key', blank=True)
-    pub_date = models.DateTimeField('date published')
+    position = models.IntegerField(default=0)
+    pub_date = models.DateTimeField('date published', default=datetime.now)
     parent = models.ForeignKey('self', blank=True, null=True, related_name="children")
 
     class Admin:
@@ -56,18 +59,32 @@ class Category(models.Model):
 
 class JournalArticle(models.Model):
     category = models.ForeignKey(Category)
+    #area = models.ForeignKey(Area)
+    #price = models.ForeignKey(Price)
     summary = models.CharField(max_length=150)
     content = models.CharField(max_length=10000, verbose_name="Content")
-    pub_date = models.DateTimeField('date published')
+    pub_date = models.DateTimeField('date published', default=datetime.now)
     title = models.CharField(max_length=50)
     small_img = models.FileField(upload_to='journal_article/%Y/%m/%d')
     article_img = models.FileField(upload_to='journal_article/%Y/%m/%d')
     show_img = models.FileField(upload_to='journal_article/%Y/%m/%d')
+    area = models.IntegerField(default=0, verbose_name=u'Diện tích (m2)')
+    price = models.FloatField(default=0.0, verbose_name=u'Giá(Triệu)')
     #short_text = RedactorField(verbose_name=u'Text')
 
     def __unicode__(self):
         return self.title
 
 
+# class Area(models.Model):
+#     name = models.CharField(max_length=150)
+#     active = models.BooleanField()
+#     description = models.CharField(max_length=500)
+#
+#
+# class Price(models.Model):
+#     name = models.CharField(max_length=150)
+#     active = models.BooleanField()
+#     description = models.CharField(max_length=500)
 
 
