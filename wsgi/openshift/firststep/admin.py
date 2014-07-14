@@ -27,15 +27,16 @@ class JournalArticleAdminForm(forms.ModelForm):
 
 class CategoryAdmin(admin.ModelAdmin):
     fieldsets = [
-        (None,               {'fields': ['name']}),
+        (None,               {'fields': ['parent', 'name', 'cat_key', 'position']}),
         ('Date information', {'fields': ['pub_date']}),
     ]
-    list_display = ['name', 'pub_date']
+    list_display = ['name', '_parents_repr', 'position', 'pub_date']
 
 
 class JournalArticleAdmin(admin.ModelAdmin):
     form = JournalArticleAdminForm
-    fields = ['category', 'title', 'summary', 'content', 'small_img', 'article_img', 'show_img', 'pub_date']
+    fields = ['category', 'title', 'summary', 'content', 'small_img', 'article_img', 'show_img', 'area',
+              'price', 'pub_date']
     list_display = ['category', 'title', 'summary', 'pub_date']
     list_filter = ['pub_date']
     search_fields = ['title']
