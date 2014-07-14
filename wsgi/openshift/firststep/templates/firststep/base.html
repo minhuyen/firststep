@@ -13,15 +13,21 @@
 
 <header>
         {% block header%}
-            <ul>
-			<li><a href="{% url 'home' %}">HOME</a></li>
-			<li><a href="{% url 'news' %}">TIN TỨC</a></li>
-			<li><a href="{% url 'projectLand' %}">ĐẤT NỀN DỰ ÁN</a></li>
-			<li><a href="{% url 'houseForSale' %}">NHÀ ĐẤT CẦN BÁN</a></li>
-			<li><a href="{% url 'houseForRent' %}">NHÀ ĐẤT CHO THUÊ</a></li>
-			<li><a href="{% url 'coastalVilla' %}">BIỆT THỰ VEN BIỂN</a></li>
-			<li><a href="{% url 'apartment' %}">CĂN HỘ</a></li>
-			<li><a href="{% url 'contact' %}">LIÊN HỆ</a></li>
+        <ul class="category-list">
+            {% for category in categoryList %}
+                {% if not category.parent %}
+                    <li class="category-item">
+                        <a href="{% url 'viewCategory' category.cat_key %}">{{ category.name }}</a>
+                        {% if category.children.count > 0 %}
+                            <ul class="sub-category-list">
+                                {% for child in category.children.all %}
+                                    <li class="sub-category-item"><a href="{% url 'viewCategory' category.cat_key %}">{{ child.name }}</a></li>
+                                {% endfor %}
+                            </ul>
+                        {% endif %}
+                    </li>
+                {% endif %}
+            {% endfor %}
 		</ul>
         {% endblock %}
     </header>

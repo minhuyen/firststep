@@ -8,6 +8,8 @@ from django.conf import settings
 import logging
 
 logger = logging.getLogger('firststep.views')
+
+
 def home(request):
     try:
         category1 = Category.objects.get(name="dat-nen-du-an")
@@ -69,61 +71,13 @@ def home(request):
     return render(request, 'firststep/home.html', context)
 
 
-def houseForSaleList(request):
+def viewCategory(request, cat_key):
     try:
-        category = Category.objects.get(name="nha-dat-can-ban")
+        category = Category.objects.get(cat_key=cat_key)
     except Category.DoesNotExist:
         context = {'list': []}
     else:
         list = category.journalarticle_set.order_by('-pub_date')[:3]
-        #hfs_list = JournalArticle.objects.order_by('-pub_date')[:3]
-        context = {'list': list}
-
-    return render(request, 'firststep/news.html', context)
-
-
-def houseForRentList(request):
-    try:
-        category = Category.objects.get(name="nha-dat-cho-thue")
-    except Category.DoesNotExist:
-        context = {'list': []}
-    else:
-        list = category.journalarticle_set.order_by('-pub_date')[:3]
-        #hfs_list = JournalArticle.objects.order_by('-pub_date')[:3]
-        context = {'list': list}
-    return render(request, 'firststep/news.html', context)
-
-def coastalVillaList(request):
-    try:
-        category = Category.objects.get(name="biet-thu-ven-bien")
-    except Category.DoesNotExist:
-        context = {'list': []}
-    else:
-        list = category.journalarticle_set.order_by('-pub_date')[:3]
-        #hfs_list = JournalArticle.objects.order_by('-pub_date')[:3]
-        context = {'list': list}
-    return render(request, 'firststep/news.html', context)
-
-def apartmentList(request):
-    try:
-        category = Category.objects.get(name="can-ho")
-    except Category.DoesNotExist:
-        context = {'list': []}
-    else:
-        list = category.journalarticle_set.order_by('-pub_date')[:3]
-        #hfs_list = JournalArticle.objects.order_by('-pub_date')[:3]
-        context = {'list': list}
-    return render(request, 'firststep/news.html', context)
-
-
-def projectLandList(request):
-    try:
-        category = Category.objects.get(name="dat-nen-du-an")
-    except Category.DoesNotExist:
-        context = {'list': []}
-    else:
-        list = category.journalarticle_set.order_by('-pub_date')[:3]
-        #hfs_list = JournalArticle.objects.order_by('-pub_date')[:3]
         context = {'list': list}
     return render(request, 'firststep/news.html', context)
 
@@ -152,7 +106,7 @@ def contact(request):
 def sendMail(request):
     try:
         emailAddress = request.POST.get("emailAddress", "")
-        comment = request.POST.get("comment", "")     
+        comment = request.POST.get("comment", "")
         name = request.POST.get("name", "")
         phone = request.POST.get("mobile", "")
         subject, from_email, to = 'Message from'+" "+name, settings.EMAIL_HOST_USER, 'minhuyendo@gmail.com'
@@ -178,3 +132,7 @@ def sendMail(request):
     #     #print "Unexpected error:", sys.exc_info()[0]
     #     #raise
     #     return render(request, 'firststep/contact.html',{'result':0})
+
+
+# def categoryList(request):
+#     return {'categoryList',Category.objects.all()}
