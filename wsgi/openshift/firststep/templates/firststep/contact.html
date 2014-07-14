@@ -2,11 +2,17 @@
 {% load staticfiles %}
 {% block title %}Tư vấn nhà đất Đà Nẵng{% endblock %}
 {% block content %}
-
+{{ form.media.js }}
 <link rel="stylesheet" href="{% static 'firststep/css/validationEngine.jquery.css' %}" type="text/css"/> 
  <script src="{% static 'firststep/js/jquery.min.js' %}" type="text/javascript">
 	</script>
-		
+	<script src="{% static 'firststep/js/jquery.uniform.min.js' %}" type="text/javascript">
+	</script>
+	
+	<script type="text/javascript" src="{% static 'firststep/js/map.js' %}"></script>
+	<script src="{% static 'firststep/js/jquery.gmap-1.1.0-min.js' %}" type="text/javascript">
+	</script>
+
 	<script src="{% static 'firststep/js/jquery.validationEngine-vi.js' %}" type="text/javascript" charset="utf-8">
 	</script>
 	
@@ -17,9 +23,11 @@
 <body>
 	
 
-	<div class="contact-img-top">
-		<img src="{% static 'firststep/images/contact.jpg' %}">
+	<div class="contact-img-top" id="map">
+		
+    </div>
 	</div>
+	
 	<!-- # contact-img-top -->
 
 	
@@ -82,6 +90,28 @@
 			{showOneMessage:true}
 			);
 	});
+</script>
+<script type="text/javascript">
+	$(document).ready(function () {
+           
+            var myCenter = new google.maps.LatLng(16.031901, 108.224087);
+            $("#map").gMap({ markers: [{ latitude: 16.031901,
+                longitude: 108.224087,
+                html: "<b>Công ty CP Đất Xanh Miền Trung</b> <br/>422 đường 2/9, Hải Châu, TP. Đà Nẵng",
+                popup: true
+            }],
+
+                zoom: 15,
+                center: myCenter
+            });
+            $("#map").click(function () {
+                event.stopPropagation();
+            });
+
+            var $uniformed;
+            $uniformed = $("#uniForm").find("input, textarea, button").not(".skipThese");
+            $uniformed.uniform();
+           }) 
 </script>
 {% endblock %}
 
