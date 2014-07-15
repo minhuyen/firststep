@@ -56,11 +56,16 @@ class Category(models.Model):
         p_list.append(self.name)
         return self.get_separator().join(p_list)
 
+class Location(models.Model):
+    name = models.CharField(max_length=150)
+    position = models.IntegerField(default=0)
+
+    def __unicode__(self):
+        return self.name
 
 class JournalArticle(models.Model):
     category = models.ForeignKey(Category)
-    #area = models.ForeignKey(Area)
-    #price = models.ForeignKey(Price)
+    location = models.ForeignKey(Location, blank=True, null=True)
     summary = models.CharField(max_length=150)
     content = models.CharField(max_length=10000, verbose_name="Content")
     pub_date = models.DateTimeField('date published', default=datetime.now)
@@ -76,15 +81,7 @@ class JournalArticle(models.Model):
         return self.title
 
 
-# class Area(models.Model):
-#     name = models.CharField(max_length=150)
-#     active = models.BooleanField()
-#     description = models.CharField(max_length=500)
-#
-#
-# class Price(models.Model):
-#     name = models.CharField(max_length=150)
-#     active = models.BooleanField()
-#     description = models.CharField(max_length=500)
+
+
 
 
