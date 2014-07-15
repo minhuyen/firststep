@@ -47,12 +47,12 @@
 		<div class="form">
 			<p>Dự án Ngân Câu Ngân Giang nằm cạnh trường Đại học Nội Vụ, Đại học Mỹ Thái Bình Dương: Cách biển 1.5 Km, cạnh sân golf Vinacapital, Khu biệt thự Triệu đô, Resort 5 sao,... Hạ tầng hoàn thiện, công viên cây xanh đã được hình thành. Bắt nguồn từ việc mặt bằng nguyên sơ bằng phẳng với kết cấu địa chất tốt nên việc xây dựng hạ tầng được tiến hành nhanh chóng.</p>
 			<form id="formID" onsubmit="return jQuery(this).validationEngine('validate');" class="formular" 
-			action="{% url 'sendMail' %}" method="post">
+			action="{% url 'contact' %}" method="post">
 				{% csrf_token %}
 				<p class="title topbot">Liên hệ</p>
-				{% if result = 1 %}
+				{% if result == 1 %}
 				   <p style="color: green;width: 54%;background-color: rgb(199, 233, 199);">Thông tin của bạn đã được gửi đi thành công.<p>
-				{% elif result = 0 %}
+				{% elif result == 0 %}
 				    <p style="color: rgb(238, 57, 12);width: 61%;background-color: rgb(233, 206, 199);">Thông tin của bạn đã được gửi đi không thành công.</p>
 				{%else%}
 				{% endif %}

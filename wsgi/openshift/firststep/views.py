@@ -101,23 +101,40 @@ def detail(request, ja_id):
 
 
 def contact(request):
-    return render(request, 'firststep/contact.html')
+    if request.method == 'POST':
+        try:
+            emailAddress = request.POST.get("emailAddress", "")
+            comment = request.POST.get("comment", "")
+            name = request.POST.get("name", "")
+            phone = request.POST.get("mobile", "")
+            subject, from_email, to = 'Message from'+" "+name, settings.EMAIL_HOST_USER, 'minhuyendo@gmail.com'
+            text_content = 'You have received request from customer.'
+            html_content = '<p>Hi!</p><p>Below is the customer contact information</p><p><strong>Name:</strong> '+name+'</p><p><strong>Email:</strong> '+emailAddress+'</p><p><strong>Phone:</strong> '+phone+'</p><p><strong>Message:</strong></p> <div>'+comment+'</div><p>-----</p>'
+            msg = EmailMultiAlternatives(subject, text_content, from_email, [to])
+            msg.attach_alternative(html_content, "text/html")
+            msg.send()
+            return render(request, 'firststep/contact.html', {'result':1})
+        except:
+            return render(request, 'firststep/contact.html', {'result':0})
+    else:
+        return render(request, 'firststep/contact.html')
 
-def sendMail(request):
-    try:
-        emailAddress = request.POST.get("emailAddress", "")
-        comment = request.POST.get("comment", "")
-        name = request.POST.get("name", "")
-        phone = request.POST.get("mobile", "")
-        subject, from_email, to = 'Message from'+" "+name, settings.EMAIL_HOST_USER, 'minhuyendo@gmail.com'
-        text_content = 'You have received request from customer.'
-        html_content = '<p>Hi!</p><p>Below is the customer contact information</p><p><strong>Name:</strong> '+name+'</p><p><strong>Email:</strong> '+emailAddress+'</p><p><strong>Phone:</strong> '+phone+'</p><p><strong>Message:</strong></p> <div>'+comment+'</div><p>-----</p>'
-        msg = EmailMultiAlternatives(subject, text_content, from_email, [to])
-        msg.attach_alternative(html_content, "text/html")
-        msg.send()
-        return render(request, 'firststep/contact.html',{'result':1})
-    except:
-        return render(request, 'firststep/contact.html',{'result':0})
+
+# def sendMail(request):
+#     try:
+#         emailAddress = request.POST.get("emailAddress", "")
+#         comment = request.POST.get("comment", "")
+#         name = request.POST.get("name", "")
+#         phone = request.POST.get("mobile", "")
+#         subject, from_email, to = 'Message from'+" "+name, settings.EMAIL_HOST_USER, 'minhuyendo@gmail.com'
+#         text_content = 'You have received request from customer.'
+#         html_content = '<p>Hi!</p><p>Below is the customer contact information</p><p><strong>Name:</strong> '+name+'</p><p><strong>Email:</strong> '+emailAddress+'</p><p><strong>Phone:</strong> '+phone+'</p><p><strong>Message:</strong></p> <div>'+comment+'</div><p>-----</p>'
+#         msg = EmailMultiAlternatives(subject, text_content, from_email, [to])
+#         msg.attach_alternative(html_content, "text/html")
+#         msg.send()
+#         return render(request, 'firststep/contact.html',{'result':1})
+#     except:
+#         return render(request, 'firststep/contact.html',{'result':0})
     # try:
     #     emailAddress = request.POST.get("emailAddress", "")
     #     comment = request.POST.get("comment", "")

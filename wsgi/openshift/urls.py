@@ -10,7 +10,7 @@ urlpatterns = patterns('',
     url(r'^$', 'firststep.views.home', name='home'),
     url(r'^tin-tuc/$', 'firststep.views.news', name='news'),
     url(r'^lien-he$', 'firststep.views.contact', name='contact'),
-    url(r'^lien-he/$', 'firststep.views.sendMail', name='sendMail'),
+    #url(r'^lien-he/$', 'firststep.views.sendMail', name='sendMail'),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^redactor/', include('redactor.urls')),
     url(r'^(?P<cat_key>[-\w]+)/$', 'firststep.views.viewCategory', name='viewCategory')
