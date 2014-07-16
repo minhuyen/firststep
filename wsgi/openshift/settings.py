@@ -58,6 +58,7 @@ INSTALLED_APPS = (
     'polls',
     'firststep',
     'redactor',
+
 )
 
 MIDDLEWARE_CLASSES = (

@@ -14,6 +14,9 @@
 <header>
         {% block header%}
         <ul class="category-list">
+            <li class="category-item">
+                <a href="{% url 'home' %}">Home</a>
+            </li>
             {% for category in categoryList %}
                 {% if not category.parent %}
                     <li class="category-item">

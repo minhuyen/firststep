@@ -66,7 +66,7 @@ class Location(models.Model):
 class JournalArticle(models.Model):
     category = models.ForeignKey(Category)
     location = models.ForeignKey(Location, blank=True, null=True)
-    summary = models.CharField(max_length=150)
+    summary = models.CharField(max_length=350)
     content = models.CharField(max_length=10000, verbose_name="Content")
     pub_date = models.DateTimeField('date published', default=datetime.now)
     title = models.CharField(max_length=50)
@@ -79,6 +79,20 @@ class JournalArticle(models.Model):
 
     def __unicode__(self):
         return self.title
+
+
+class Home(models.Model):
+    category = models.ForeignKey(Category)
+    title = models.CharField(max_length=150)
+    position = models.IntegerField(default=0)
+    show_img = models.FileField(upload_to='home/%Y/%m/%d')
+    pub_date = models.DateTimeField('date published', default=datetime.now)
+
+    def __unicode__(self):
+        return self.title
+
+
+
 
 
 
