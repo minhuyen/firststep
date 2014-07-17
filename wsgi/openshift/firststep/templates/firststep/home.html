@@ -6,9 +6,9 @@
         <section id="slider-top">
 		    <ul class="bxslider-top">
             {% for ja in list6 %}
-                <li><img src="{{ MEDIA_URL}}{{ ja.article_img }}">
-                    <a href="">read more</a>
-                    <p>{{ ja.summary }}</p>
+                <li><img src="{{ MEDIA_URL}}{{ ja.show_img }}">
+                    <a href="{{ ja.category.get_absolute_url }}">read more</a>
+                    <p>{{ ja.title}}</p>
                 </li>
             {% endfor %}
             </ul>
@@ -33,8 +33,33 @@
                     <div><p>{{ categoryName1 }}</p></div>
                 </div>
                 <!-- # First div -->
-                <div>
-                    <img src="{{ MEDIA_URL }}{{ list1.0.small_img }}">
+                <div id="search">
+                    <!--<img src="{{ MEDIA_URL }}{{ list1.0.small_img }}">-->
+                    <form action="" method="post">
+                        {% csrf_token %}
+                        <div>
+                            <input type="radio" name="type-land" value="1" checked="true"> Nhà đất bán
+                            <input type="radio" name="type-land" value="2"> Nhà đất cho thuê
+                        </div>
+                        <div>
+                            <select name="category">
+                                <option value="">--------</option>
+                            </select>
+                            <select name="location">
+                                <option value="">-----chon quan------</option>
+                            </select>
+                        </div>
+                        <div>
+                            <select name="price">
+                                <option value="">-----chon gia------</option>
+                            </select>
+                            <select name="area">
+                                <option value="">-----chon dien tich------</option>
+                            </select>
+                        </div>
+
+                        <input type="submit" value="Search">
+                    </form>
                 </div>
                 <!-- # Last Div -->
             </section>

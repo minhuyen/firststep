@@ -48,12 +48,12 @@
 		<div class="form">
 			<p>{{ contact.description }}</p>
 			<form id="formID" onsubmit="return jQuery(this).validationEngine('validate');" class="formular" 
-			action="{% url 'sendMail' %}" method="post">
+			action="{% url 'contact' %}" method="post">
 				{% csrf_token %}
 				<p class="title topbot">Liên hệ</p>
-				{% if result = 1 %}
+				{% if result == 1 %}
 				   <p style="color: green;width: 84%;background-color: rgb(199, 233, 199);margin-left: 98px;margin-bottom: 15px;font-family: "arial", Tahoma, sans-serif;">Thông tin của bạn đã được gửi đi thành công.<p>
-				{% elif result = 0 %}
+				{% elif result == 0 %}
 				    <p style="color: rgb(238, 57, 12);width: 84%;background-color: rgb(233, 206, 199);margin-left: 98px;margin-bottom: 15px;font-family: "arial", Tahoma, sans-serif;">Thông tin của bạn đã được gửi đi không thành công.</p>
 				{%else%}
 				{% endif %}

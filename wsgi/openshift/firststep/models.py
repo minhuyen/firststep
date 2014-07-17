@@ -56,12 +56,17 @@ class Category(models.Model):
         p_list.append(self.name)
         return self.get_separator().join(p_list)
 
+class Location(models.Model):
+    name = models.CharField(max_length=150)
+    position = models.IntegerField(default=0)
+
+    def __unicode__(self):
+        return self.name
 
 class JournalArticle(models.Model):
     category = models.ForeignKey(Category)
-    #area = models.ForeignKey(Area)
-    #price = models.ForeignKey(Price)
-    summary = models.CharField(max_length=150)
+    location = models.ForeignKey(Location, blank=True, null=True)
+    summary = models.CharField(max_length=350)
     content = models.CharField(max_length=10000, verbose_name="Content")
     pub_date = models.DateTimeField('date published', default=datetime.now)
     title = models.CharField(max_length=50)
@@ -76,16 +81,14 @@ class JournalArticle(models.Model):
         return self.title
 
 
-# class Area(models.Model):
-#     name = models.CharField(max_length=150)
-#     active = models.BooleanField()
-#     description = models.CharField(max_length=500)
-#
-#
-# class Price(models.Model):
-#     name = models.CharField(max_length=150)
-#     active = models.BooleanField()
-#     description = models.CharField(max_length=500)
+class Home(models.Model):
+    category = models.ForeignKey(Category)
+    title = models.CharField(max_length=150)
+    position = models.IntegerField(default=0)
+    show_img = models.FileField(upload_to='home/%Y/%m/%d')
+    pub_date = models.DateTimeField('date published', default=datetime.now)
+	def __unicode__(self):
+        return self.title
 class ContactInfo(models.Model):
     company = models.CharField(max_length=150)
     address = models.CharField(max_length=150)

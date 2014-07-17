@@ -3,8 +3,7 @@ from django import forms
 from redactor.widgets import RedactorEditor
 
 # Register your models here.
-from firststep.models import Category, JournalArticle,ContactInfo
-
+from firststep.models import Category, JournalArticle, Location, Home,ContactInfo
 
 class JournalArticleAdminForm(forms.ModelForm):
     summary = forms.CharField(widget=forms.Textarea)
@@ -32,11 +31,15 @@ class CategoryAdmin(admin.ModelAdmin):
     ]
     list_display = ['name', '_parents_repr', 'position', 'pub_date']
 
+class LocationAdmin(admin.ModelAdmin):
+    fields = ['name', 'position']
+    list_display = ['name', 'position']
+
 
 class JournalArticleAdmin(admin.ModelAdmin):
     form = JournalArticleAdminForm
     fields = ['category', 'title', 'summary', 'content', 'small_img', 'article_img', 'show_img', 'area',
-              'price', 'pub_date']
+              'price', 'pub_date', 'location']
     list_display = ['category', 'title', 'summary', 'pub_date']
     list_filter = ['pub_date']
     search_fields = ['title']
@@ -47,7 +50,10 @@ class ContactInfoAdminFrom(forms.ModelForm):
 class ContactInfoAdmin(admin.ModelAdmin):
     form = ContactInfoAdminFrom
     fields = ['company', 'address', 'name', 'phone', 'email', 'website', 'description', 'position']
-
-admin.site.register(Category, CategoryAdmin)
+class HomeAdmin(admin.ModelAdmin):
+    fields = ['category', 'title', 'position', 'show_img', 'pub_date']
+    list_display = ['category', 'title', 'position', 'pub_date']admin.site.register(Category, CategoryAdmin)
+admin.site.register(Location, LocationAdmin)
+admin.site.register(Home, HomeAdmin)
 admin.site.register(JournalArticle, JournalArticleAdmin)
 admin.site.register(ContactInfo,ContactInfoAdmin)

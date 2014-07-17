@@ -1,46 +1,104 @@
 /* Desktop */
 @import url('jquery.bxslider.css');
 
-body {	width: 100%; margin: 0; padding: 0; 
-	overflow-x: hidden; overflow-y: scroll;  }
+body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+	overflow-x: hidden;
+    overflow-y: scroll;
+}
 
 /* Menu */
-header, footer { background: black; color: white; text-align: center;
-	font-family: "arial", Times New Roman, sans-serif;
+header, footer {
+    background: black;
+    color: white;
+    text-align: center;
+	font-family: "arial",
+    Times New Roman, sans-serif;
 }
-header ul, footer ul {
-	list-style: none; line-height: 70px;
-	margin: 0 auto;	padding: 0;
-	width: 1024px;	height: 70px;
+header > ul, footer > ul {
+	list-style: none;
+    line-height: 70px;
+	margin: 0 auto;
+    padding: 0;
+	width: 1024px;
+    height: 70px;
 }
-header ul li { padding: 0 11.1px; float: left; }
-header ul li a {text-decoration: none;color: white;}
-header ul li a:hover { color: chartreuse; }
+header ul li {
+    padding: 0 11.1px;
+    float: left;
+}
+header ul li a {
+    text-decoration: none;
+    color: white;
+}
+header ul li a:hover {
+    color: chartreuse;
+}
 /* # menu */
 
 /* Footer */
-footer ul li { padding: 0 50px 0 53px; float: left;}
-footer ul li:last-child { color: #292829; float: right; padding: 0 11px 0 0; }
-footer ul li img { width: 32px; height: 32px; margin-left: -42px; 
-	position: absolute; margin-top: 18px;}
+footer ul li {
+    padding: 0 50px 0 53px;
+    float: left;
+}
+footer ul li:last-child {
+    color: #292829;
+    float: right;
+    padding: 0 11px 0 0;
+}
+footer ul li img {
+    width: 32px;
+    height: 32px;
+    margin-left: -42px;
+	position: absolute;
+    margin-top: 18px;
+}
 /* #Footer*/
 
 /* contact */
-.contact-img-top { position: relative; width: 100%; padding-bottom: 24.21875%; }
-.contact-img-top img { position: absolute; top: 0; left: 0;
-	width: 100%; height: 100%; 
+.contact-img-top {
+    position: relative;
+    width: 100%;
+    padding-bottom: 24.21875%; }
+.contact-img-top img {
+    position: absolute;
+    top: 0;
+    left: 0;
+	width: 100%;
+    height: 100%;
 }
 
-section#contact { width: 980px; position: relative; overflow: hidden; margin: 30px auto;}
-.infor { width: 340px;float: left;padding: 0 20px 0 0; text-align: right; }
-.form { width: 600px;padding-left: 20px;float: left;}
+section#contact {
+    width: 980px;
+    position: relative;
+    overflow: hidden;
+    margin: 30px auto;
+}
+.infor {
+    width: 340px;
+    float: left;
+    padding: 0 20px 0 0;
+    text-align: right;
+}
+.form {
+    width: 600px;
+    padding-left: 20px;
+    float: left;
+}
 section#contact p { margin: 0; font-size: 16px; font-family: "arial", Tahoma, sans-serif; 
 	line-height: 25px; }
 .title { font-size: 34px !important; line-height: normal !important;}
 
 .label { width: 80px; float: left;}
 
-select { border: 1px solid black; float: left; height: 24px; margin: 0 0 0 -40px;}
+select {
+    border: 1px solid black;
+    float: left;
+    height: 24px;
+    /*margin: 0 0 0 -40px;*/
+}
 #firstname, #lastname { width: 160px; border: 1px solid black; height: 20px; float: left; margin: 0 0 0 4px; }
 .left10 { margin:  0 0 0 10px !important; }
 #address, #mobile { width: 222px; border: 1px solid black; height: 20px; float: left;}
@@ -64,7 +122,9 @@ select { border: 1px solid black; float: left; height: 24px; margin: 0 0 0 -40px
     height: 160px;
     float: right;
 }
-.topbot { margin: 5px 0 20px 0 !important; }
+.topbot {
+    margin: 5px 0 20px 0 !important;
+}
 #contact .form button {
     background: black;
     color: white;
