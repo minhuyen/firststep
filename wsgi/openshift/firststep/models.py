@@ -81,14 +81,6 @@ class JournalArticle(models.Model):
         return self.title
 
 
-class Home(models.Model):
-    category = models.ForeignKey(Category)
-    title = models.CharField(max_length=150)
-    position = models.IntegerField(default=0)
-    show_img = models.FileField(upload_to='home/%Y/%m/%d')
-    pub_date = models.DateTimeField('date published', default=datetime.now)
-	def __unicode__(self):
-        return self.title
 class ContactInfo(models.Model):
     company = models.CharField(max_length=150)
     address = models.CharField(max_length=150)
@@ -98,6 +90,17 @@ class ContactInfo(models.Model):
     website = models.CharField(max_length=50)
     description = models.CharField(max_length=10000, verbose_name="Content")
     position = GeopositionField()
+
     def __unicode__(self):
         return self.name   
+
+class Home(models.Model):
+    category = models.ForeignKey(Category)
+    title = models.CharField(max_length=150)
+    position = models.IntegerField(default=0)
+    show_img = models.FileField(upload_to='home/%Y/%m/%d')
+    pub_date = models.DateTimeField('date published', default=datetime.now)
+
+    def __unicode__(self):
+        return self.title
 

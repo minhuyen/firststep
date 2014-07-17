@@ -50,9 +50,12 @@ class ContactInfoAdminFrom(forms.ModelForm):
 class ContactInfoAdmin(admin.ModelAdmin):
     form = ContactInfoAdminFrom
     fields = ['company', 'address', 'name', 'phone', 'email', 'website', 'description', 'position']
+
 class HomeAdmin(admin.ModelAdmin):
     fields = ['category', 'title', 'position', 'show_img', 'pub_date']
-    list_display = ['category', 'title', 'position', 'pub_date']admin.site.register(Category, CategoryAdmin)
+    list_display = ['category', 'title', 'position', 'pub_date']
+    
+admin.site.register(Category, CategoryAdmin)
 admin.site.register(Location, LocationAdmin)
 admin.site.register(Home, HomeAdmin)
 admin.site.register(JournalArticle, JournalArticleAdmin)
