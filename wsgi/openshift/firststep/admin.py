@@ -3,7 +3,7 @@ from django import forms
 from redactor.widgets import RedactorEditor
 
 # Register your models here.
-from firststep.models import Category, JournalArticle
+from firststep.models import Category, JournalArticle,ContactInfo
 
 
 class JournalArticleAdminForm(forms.ModelForm):
@@ -41,6 +41,13 @@ class JournalArticleAdmin(admin.ModelAdmin):
     list_filter = ['pub_date']
     search_fields = ['title']
     ordering = ['-pub_date']
+class ContactInfoAdminFrom(forms.ModelForm):
+    description = forms.CharField(widget=forms.Textarea)
+
+class ContactInfoAdmin(admin.ModelAdmin):
+    form = ContactInfoAdminFrom
+    fields = ['company', 'address', 'name', 'phone', 'email', 'website', 'description', 'position']
 
 admin.site.register(Category, CategoryAdmin)
 admin.site.register(JournalArticle, JournalArticleAdmin)
+admin.site.register(ContactInfo,ContactInfoAdmin)

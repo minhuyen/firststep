@@ -3,10 +3,10 @@ from datetime import datetime
 from django.core import validators
 from django.db import models
 from redactor.fields import RedactorField
+from geoposition.fields import GeopositionField
 
 # Create your models here.
-
-
+     
 class Category(models.Model):
     name = models.CharField(max_length=200)
     cat_key = models.CharField(max_length=200, verbose_name='Key', blank=True)
@@ -86,5 +86,15 @@ class JournalArticle(models.Model):
 #     name = models.CharField(max_length=150)
 #     active = models.BooleanField()
 #     description = models.CharField(max_length=500)
-
+class ContactInfo(models.Model):
+    company = models.CharField(max_length=150)
+    address = models.CharField(max_length=150)
+    name = models.CharField(max_length=50)
+    phone = models.CharField(max_length=50)
+    email = models.CharField(max_length=50)
+    website = models.CharField(max_length=50)
+    description = models.CharField(max_length=10000, verbose_name="Content")
+    position = GeopositionField()
+    def __unicode__(self):
+        return self.name   
 

@@ -1,7 +1,7 @@
 from django.conf.urls import patterns, url
 from django.shortcuts import render, get_object_or_404
 from django.template import RequestContext
-from firststep.models import Category,JournalArticle
+from firststep.models import Category,JournalArticle,ContactInfo
 from django.core.mail import send_mail
 from django.core.mail import EmailMultiAlternatives
 from django.conf import settings
@@ -101,23 +101,33 @@ def detail(request, ja_id):
 
 
 def contact(request):
-    return render(request, 'firststep/contact.html')
-
+    try:
+        contactGeo = ContactInfo.objects.all()[0]
+        return render(request, 'firststep/contact.html',{'contact':contactGeo})
+    except:
+        return render(request, 'firststep/contact.html',{'contact':0})
 def sendMail(request):
     try:
-        emailAddress = request.POST.get("emailAddress", "")
-        comment = request.POST.get("comment", "")
-        name = request.POST.get("name", "")
-        phone = request.POST.get("mobile", "")
-        subject, from_email, to = 'Message from'+" "+name, settings.EMAIL_HOST_USER, 'minhuyendo@gmail.com'
-        text_content = 'You have received request from customer.'
-        html_content = '<p>Hi!</p><p>Below is the customer contact information</p><p><strong>Name:</strong> '+name+'</p><p><strong>Email:</strong> '+emailAddress+'</p><p><strong>Phone:</strong> '+phone+'</p><p><strong>Message:</strong></p> <div>'+comment+'</div><p>-----</p>'
-        msg = EmailMultiAlternatives(subject, text_content, from_email, [to])
-        msg.attach_alternative(html_content, "text/html")
-        msg.send()
-        return render(request, 'firststep/contact.html',{'result':1})
+        contactGeo = ContactInfo.objects.all()[0]
+        if request.method == 'POST':
+            try:
+                emailAddress = request.POST.get("emailAddress", "")
+                comment = request.POST.get("comment", "")
+                name = request.POST.get("name", "")
+                phone = request.POST.get("mobile", "")
+                subject, from_email, to = 'Message from'+" "+name, settings.EMAIL_HOST_USER, 'minhuyendo@gmail.com'
+                text_content = 'You have received request from customer.'
+                html_content = '<p>Hi!</p><p>Below is the customer contact information</p><p><strong>Name:</strong> '+name+'</p><p><strong>Email:</strong> '+emailAddress+'</p><p><strong>Phone:</strong> '+phone+'</p><p><strong>Message:</strong></p> <div>'+comment+'</div><p>-----</p>'
+                msg = EmailMultiAlternatives(subject, text_content, from_email, [to])
+                msg.attach_alternative(html_content, "text/html")
+                msg.send()
+                return render(request, 'firststep/contact.html',{'result':1,'contact':contactGeo})
+            except:
+                return render(request, 'firststep/contact.html',{'result':0,'contact':contactGeo})
+        else:
+             return render(request, 'firststep/contact.html',{'contact':contactGeo})
     except:
-        return render(request, 'firststep/contact.html',{'result':0})
+        return render(request, 'firststep/contact.html',{'contact':0})
     # try:
     #     emailAddress = request.POST.get("emailAddress", "")
     #     comment = request.POST.get("comment", "")
