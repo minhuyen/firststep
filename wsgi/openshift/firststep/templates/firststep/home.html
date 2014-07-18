@@ -34,8 +34,8 @@
                 </div>
                 <!-- # First div -->
                 <div id="search">
-                    <!--<img src="{{ MEDIA_URL }}{{ list1.0.small_img }}">-->
-                    <form action="" method="post">
+                    <img src="{{ MEDIA_URL }}{{ list1.0.small_img }}">
+                    <!--<form action="" method="post">
                         {% csrf_token %}
                         <div>
                             <input type="radio" name="type-land" value="1" checked="true"> Nhà đất bán
@@ -60,18 +60,16 @@
                             </select>
                         </div>
                         <div>
-                            <!-- <select name="price">
-                                <option value="">----Chọn giá----</option>
-                            </select>
-                            <select name="area">
-                                <option value="">----Chọn diện tích----</option>
-                            </select> -->
-                            <input type="text" name="price" value="----Chọn giá----">
-                            <input type="text" name="area" value="----Chọn diện tích----">
+                            <p>Giá(Triệu):</p>
+                            Từ: <input type="text" name="price" value="">
+                            Đến: <input type="text" name="price1" value="">
+                            <p>Diện tích(m2):</p>
+                            Từ: <input type="text" name="area" value="">
+                            Đến: <input type="text" name="area1" value="">
                         </div>
 
                         <input type="submit" value="Search">
-                    </form>
+                    </form> -->
                 </div>
                 <!-- # Last Div -->
             </section>
