@@ -1,7 +1,7 @@
 from django.conf.urls import patterns, url
 from django.shortcuts import render, get_object_or_404
 from django.template import RequestContext
-from firststep.models import Category,JournalArticle, Home, ContactInfo
+from firststep.models import Category,JournalArticle, Home, ContactInfo, Location
 from django.core.mail import send_mail
 from django.core.mail import EmailMultiAlternatives
 from django.conf import settings
@@ -61,11 +61,21 @@ def home(request):
     except Home.DoesNotExist:
         list6 = []
     else:
-        list6 = home.order_by('-position')[:4]
+        list6 = home.order_by('position')[:4]
+
+    try:
+        cats = Category.objects.filter(parent=None).order_by('position')
+    except Category.DoesNotExist:
+        cats = []
+
+    try:
+        locations = Location.objects.all().order_by('position')
+    except Location.DoesNotExist:
+        locations = []
 
     context = {'list1': list1, 'categoryName1': categoryName1, 'list2': list2, 'categoryName2': categoryName2,
                'list3': list3, 'categoryName3': categoryName3, 'list4': list4, 'categoryName4': categoryName4,
-               'list5': list5, 'categoryName5': categoryName5, 'list6': list6}
+               'list5': list5, 'categoryName5': categoryName5, 'list6': list6, 'cats': cats, 'locations': locations}
     return render(request, 'firststep/home.html', context)
 
 

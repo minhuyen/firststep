@@ -43,19 +43,31 @@
                         </div>
                         <div>
                             <select name="category">
-                                <option value="">--------</option>
+                                <option value="">----Chọn loại đất----</option>
+                                {% if cats %}
+                                    {% for cat in cats %}
+                                        <option value="{{ cat.id }}">{{ cat.name }}</option>
+                                    {% endfor %}
+                                {% endif %}
                             </select>
                             <select name="location">
-                                <option value="">-----chon quan------</option>
+                                <option value="">----Chọn quận----</option>
+                                {% if locations %}
+                                    {% for lo in locations %}
+                                        <option value="{{ lo.id }}">{{ lo.name }}</option>
+                                    {% endfor %}
+                                {% endif %}
                             </select>
                         </div>
                         <div>
-                            <select name="price">
-                                <option value="">-----chon gia------</option>
+                            <!-- <select name="price">
+                                <option value="">----Chọn giá----</option>
                             </select>
                             <select name="area">
-                                <option value="">-----chon dien tich------</option>
-                            </select>
+                                <option value="">----Chọn diện tích----</option>
+                            </select> -->
+                            <input type="text" name="price" value="----Chọn giá----">
+                            <input type="text" name="area" value="----Chọn diện tích----">
                         </div>
 
                         <input type="submit" value="Search">
