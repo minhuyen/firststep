@@ -4,4 +4,4 @@ __author__ = 'shin'
 
 
 def categoryList(request):
-    return {'categoryList': Category.objects.all()}
+    return {'categoryList': Category.objects.all().order_by('position')}

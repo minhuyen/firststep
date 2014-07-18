@@ -1,0 +1,118 @@
+.navbar-default {
+    background: #000000;
+}
+.navbar-default .navbar-nav > li > a {
+    color: #ffffff;
+}
+
+.navbar-default .navbar-brand {
+    color: #ffffff;
+}
+
+.navbar-default .navbar-toggle {
+    color: #ffffff;
+}
+
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+    background: #000000;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #ffffff;
+}
+
+.navbar-nav > li:hover {
+    background: #ffffff;
+}
+
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+    color: #000000;
+}
+
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+    color: #ffffff;
+}
+
+.navbar .dropdown-menu {
+    box-shadow: none;
+    padding: 0;
+}
+
+.dropdown-menu > li {
+    border-bottom: 1px solid #ffffff;
+}
+
+.dropdown-menu > li:first-child {
+    border-top: 1px solid #000000;
+}
+.dropdown-menu > li:last-child {
+    border-bottom: none;
+}
+
+.dropdown-menu > li > a{
+    background: #000000;
+    color: #ffffff;
+    padding: 10px 0 10px 40px;
+}
+
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus {
+    background: #ffffff;
+    color: #000000;
+}
+
+.navbar .navbar-nav {
+    margin: 0;
+    border: none;
+}
+
+.navbar .navbar-collapse {
+    margin: 0;
+    padding: 0;
+}
+
+.navbar .container-fluid {
+    padding: 0;
+}
+
+.navbar .navbar-header {
+    padding: 0 15px;
+}
+
+
+@media (min-width: 1024px) {
+    .navbar .navbar-brand {
+        display: none;
+    }
+}
+
+@media (max-width: 1024px) {
+    .navbar .navbar-brand {
+        display: block;
+    }
+    .navbar .dropdown-menu {
+        background-color: transparent;
+        border: 0px none;
+        float: none;
+        position: static;
+        width: auto;
+        /*font-size: 16px;*/
+        text-align: left;
+        top: 100%;
+        min-width: 160px;
+        padding: 0;
+        left: 0;
+        background-clip: padding-box;
+    }
+
+    .nav > li {
+        border-bottom: 1px solid #ffffff;
+    }
+
+    .dropdown-menu>li>a {
+        line-height: 20px;
+    }
+}

@@ -3,42 +3,70 @@
 <head lang="en">
     <meta charset="UTF-8">
     {% load staticfiles %}
-    <link rel="stylesheet" href="{% static 'firststep/css/main.css' %}" />
     <link rel="stylesheet" href="{% static 'firststep/css/jquery.bxslider.css' %}" />
+    <link rel="stylesheet" href="{% static 'firststep/css/bootstrap.min.css' %}" />
     <script type="text/javascript" src="{% static 'firststep/js/jquery.min.js' %}"></script>
 	<script type="text/javascript" src="{% static 'firststep/js/jquery.bxslider.min.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'firststep/css/main.css' %}" />
+    <script type="text/javascript" src="{% static 'firststep/js/navigation.js' %}"></script>
+{#    <script type="text/javascript" src="{% static 'firststep/js/bootstrap.min.js' %}"></script>#}
     <title>{% block title %}First Step{% endblock %}</title>
 </head>
 <body>
-
-<header>
+    <header>
         {% block header%}
-        <ul class="category-list">
-            <li class="category-item">
-                <a href="{% url 'home' %}">Home</a>
-            </li>
-            {% for category in categoryList %}
-                {% if not category.parent %}
-                    <li class="category-item">
-                        <a href="{% url 'viewCategory' category.cat_key %}">{{ category.name }}</a>
-                        {% if category.children.count > 0 %}
-                            <ul class="sub-category-list">
-                                {% for child in category.children.all %}
-                                    <li class="sub-category-item"><a href="{% url 'viewCategory' category.cat_key %}">{{ child.name }}</a></li>
-                                {% endfor %}
-                            </ul>
-                        {% endif %}
-                    </li>
-                {% endif %}
-            {% endfor %}
-            <li class="categy-item">
-                <a href="{% url 'contact' %}">Liên hệ</a>
-            </li>
-		</ul>
+            <nav class="navbar navbar-default" role="navigation">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="#">Chuyên Mục</a>
+                    </div>
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav">
+                            <li>
+                                <a href="{% url 'home' %}">Home</a>
+                            </li>
+                            {% for category in categoryList %}
+                                {% if not category.parent %}
+                                    {% if category.children.count == 0 %}
+                                        <li>
+                                            <a href="{% url 'viewCategory' category.cat_key %}">
+                                                {{ category.name }}
+                                            </a>
+                                        </li>
+                                    {% else %}
+                                        <li class="dropdown">
+                                            <a href="{% url 'viewCategory' category.cat_key %}" class="dropdown-toggle" data-toggle="dropdown">
+                                                {{ category.name }}
+                                            </a>
+                                            <ul class="dropdown-menu" role="menu">
+                                            {% for child in category.children.all %}
+                                                <li><a href="{% url 'viewCategory' category.cat_key %}">
+                                                    {{ child.name }}</a>
+                                                </li>
+                                            {% endfor %}
+                                            </ul>
+                                        </li>
+                                    {% endif %}
+                                {% endif %}
+                            {% endfor %}
+                            <li>
+                                <a href="{% url 'contact' %}">Liên hệ</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
         {% endblock %}
     </header>
     <div id="content">
-        {% block content %}{% endblock %}
+        {% block content %}
+        {% endblock %}
     </div>
     <footer>
         {% block footer %}
