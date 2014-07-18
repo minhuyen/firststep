@@ -1,6 +1,8 @@
-/* Desktop */
 @import url('jquery.bxslider.css');
 @import url('home.css');
+@import url('chuyenmuc-page.css');
+
+/* Desktop */
 
 body {
     width: 100%;
@@ -155,20 +157,7 @@ select {
 
 
 
-/* Tin */
-section#tin { width: 100%; position: relative; margin: 0; padding: 0; overflow: hidden;}
-section#tin .imgTin { position: relative; width: 66%; padding-bottom: 33%; float: left;}
-section#tin .imgTin img { position: absolute; width: 100%; height: 100%; top: 0; left: 0; }
-section#tin .infor-tin { position: relative;width: 34%; float: left;}
-section#tin .infor-tin div { width: 230px; height: 180px; margin: 15% auto 0 auto; position: relative; 
-	text-align: left; 	font-size: 16px; font-family: "Arial", Tahoma,sans-serif;  }
-section#tin .infor-tin div a { width: 96px;height: 35px;border: 1px solid black;
-	color: black;text-align: center;position: relative;display: block;	text-decoration: none;
-	line-height: 35px;
-}
-section#tin .infor-tin div a:hover { border: 1px solid blue; color: blue; }
-.title-tin { font-size: 25px !important;  margin: 0; padding: 0;}
-/* Tin */
+
 
 
 
