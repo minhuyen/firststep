@@ -66,52 +66,6 @@ section#slider-top ul li p {
 /*  # slider-top homePage*/
 
 
-/* slider-bot */
-section#slider-bot {
-    margin-bottom: -60px;
-    overflow: hidden;
-}
-section#slider-bot ul li {
-    position: relative !important;
-    width: 100% !important;
-    /*padding-bottom: 34%; */
-}
-section#slider-bot ul li div:first-child {
-    position: relative; width: 100%;
-    padding-bottom: 34%; z-index: 1;
-}
-section#slider-bot ul li div.bg {
-    background: url(../images/icon/bgvideo.png);
-    z-index: 4;
-}
-section#slider-bot ul li div.infor-sliderbot {
-    position: absolute;
-    width: 600px;
-    top: 20%;
-    left: 20%;
-    right: 0;
-    border: 0;
-    text-align: left;
-    font-size: 20px;
-    z-index: 4;
-    color: white;
-}
-
-section#slider-bot ul li div.infor-sliderbot p {
-    margin: 0;
-    font-size: 36px;
-    line-height: normal;
-}
-section#slider-bot ul li div.infor-sliderbot p:first-child,
-section#slider-bot ul li div.infor-sliderbot p:last-child {
-    font-size: 20px !important;
-    line-height: 25px !important;
-}
-
-/* # slider -bot */
-
-
-
 /* news-2columns - HomePage */
 section#news-2columns {
     position: relative;
@@ -230,3 +184,108 @@ section#news-3columns .block-33 a {
     line-height: 40px;
 }
 /* # news-3columns - HomePage */
+
+
+
+/* slider-bot home */
+section#slider-bot {
+    margin-bottom: -60px;
+    overflow: hidden;
+}
+section#slider-bot ul li {
+    position: relative !important;
+    width: 100% !important;
+    /*padding-bottom: 34%; */
+}
+section#slider-bot ul li div:first-child {
+    position: relative; width: 100%;
+    padding-bottom: 34%; z-index: 1;
+}
+section#slider-bot ul li div.bg {
+    background: url(../images/icon/bgvideo.png);
+    z-index: 4;
+}
+section#slider-bot ul li div.infor-sliderbot {
+    position: absolute;
+    width: 600px;
+    top: 20%;
+    left: 20%;
+    right: 0;
+    border: 0;
+    text-align: left;
+    font-size: 20px;
+    z-index: 4;
+    color: white;
+}
+
+section#slider-bot ul li div.infor-sliderbot p {
+    margin: 0;
+    font-size: 36px;
+    line-height: normal;
+}
+section#slider-bot ul li div.infor-sliderbot p:first-child,
+section#slider-bot ul li div.infor-sliderbot p:last-child {
+    font-size: 20px !important;
+    line-height: 25px !important;
+}
+
+/* # slider-bot home */
+
+
+
+
+
+@media only screen and (max-width: 767px) {
+
+    /* slider-top homePage*/
+    section#slider-top ul li p {
+        font-size: 20px;
+        bottom: 50%;
+    }
+    /* # slider-top homePage */
+
+
+    /* news-2columns - HomePage */
+    section#news-2columns div:first-child {
+        width: 100%;
+        padding-bottom: 50%;
+    }
+    section#news-2columns div:last-child {
+        width: 100%;
+        padding-bottom: 100%;
+    }
+    /* # news-2columns - HomePage */
+
+
+
+    /* news-3columns - HomePage */
+    section#news-3columns .block-33 {
+        width: 100%;
+        padding: 0 0 100% 0;
+    }
+    section#news-3columns .block-33 a:hover,
+    section#news-3columns .block-33 a:focus {
+        border: 1px solid chartreuse;
+        color: chartreuse;
+    }
+    /* # news-3columns - HomePage */
+
+
+
+    /* Slide-bot home */
+    section#slider-bot ul li div.infor-sliderbot {
+        width: 69%;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        margin: 20px auto;
+    }
+
+    section#slider-bot ul li div.infor-sliderbot p:first-child,
+    section#slider-bot ul li div.infor-sliderbot p:last-child {
+        display: none;
+    }
+
+    /* # slider-bot home */
+}
