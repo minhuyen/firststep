@@ -2,9 +2,6 @@
 {% load staticfiles %}
 {% block title %}Home{% endblock %}
 {% block content %}
-    <p>xxx</p>
-    <p>xxx</p>
-    <p>xxx</p>
     {% if list6 %}
         <section id="slider-top">
 		    <ul class="bxslider-top">
@@ -37,8 +34,8 @@
                 </div>
                 <!-- # First div -->
                 <div id="search">
-                    <img src="{{ MEDIA_URL }}{{ list1.0.small_img }}">
-                    <!--<form action="" method="post">
+                    <!-- <img src="{{ MEDIA_URL }}{{ list1.0.small_img }}"> -->
+                    <form action="{% url 'search' %}" method="post">
                         {% csrf_token %}
                         <div>
                             <input type="radio" name="type-land" value="1" checked="true"> Nhà đất bán
@@ -46,7 +43,7 @@
                         </div>
                         <div>
                             <select name="category">
-                                <option value="">----Chọn loại đất----</option>
+                                <option value="0">----Chọn loại đất----</option>
                                 {% if cats %}
                                     {% for cat in cats %}
                                         <option value="{{ cat.id }}">{{ cat.name }}</option>
@@ -54,7 +51,7 @@
                                 {% endif %}
                             </select>
                             <select name="location">
-                                <option value="">----Chọn quận----</option>
+                                <option value="0">----Chọn quận----</option>
                                 {% if locations %}
                                     {% for lo in locations %}
                                         <option value="{{ lo.id }}">{{ lo.name }}</option>
@@ -64,15 +61,15 @@
                         </div>
                         <div>
                             <p>Giá(Triệu):</p>
-                            Từ: <input type="text" name="price" value="">
-                            Đến: <input type="text" name="price1" value="">
+                            Từ: <input type="text" name="price" value="0">
+                            Đến: <input type="text" name="price1" value="0">
                             <p>Diện tích(m2):</p>
-                            Từ: <input type="text" name="area" value="">
-                            Đến: <input type="text" name="area1" value="">
+                            Từ: <input type="text" name="area" value="0">
+                            Đến: <input type="text" name="area1" value="0">
                         </div>
 
                         <input type="submit" value="Search">
-                    </form> -->
+                    </form>
                 </div>
                 <!-- # Last Div -->
             </section>
