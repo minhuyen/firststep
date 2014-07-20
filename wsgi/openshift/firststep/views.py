@@ -149,12 +149,12 @@ def search(request):
         price1 = request.POST.get("price1", 0)
         area = request.POST.get("area", 0)
         area1 = request.POST.get("area1", 0)
-        print('category: %s' % category)
-        print('location: %s' % location)
-        print('price: %s' % price)
-        print('price1: %s' % price1)
-        print('area: %s' % area)
-        print('area1: %s' % area1)
+        #print('category: %s' % category)
+        #print('location: %s' % location)
+        #print('price: %s' % price)
+        #print('price1: %s' % price1)
+        #print('area: %s' % area)
+        #print('area1: %s' % area1)
 
         journalArticels= JournalArticle.objects
         if category and category != "0":
@@ -170,7 +170,7 @@ def search(request):
         if area1 and area1 != "0":
             journalArticels = journalArticels.filter(area__lte=area1)
 
-        print("query: %s" %journalArticels.query)
+        #print("query: %s" %journalArticels.query)
         context = {'list': journalArticels, "search": 1}
         return render(request, 'firststep/news.html', context)
     else:

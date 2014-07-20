@@ -87,7 +87,7 @@ section#news-2columns div:last-child {
     width: 33.3333%;
     float: left;
     display: inline-block;
-    padding-bottom: 33.3333%;
+    /*padding-bottom: 33.3333%;*/
     position: relative;
 
 }
@@ -110,6 +110,14 @@ section#news-2columns div:first-child div {
     color: white;
     background: url(../images/icon/bgvideo.png);
 }
+
+section#news-2columns div#search div{
+    position: relative;
+    width: 100%;
+    float: left;
+    padding: 13px 10px;
+}
+
 
 section#news-2columns div:first-child div p {
     margin: 0 0 0 30px;
