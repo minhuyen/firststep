@@ -23,10 +23,9 @@ html {
 
 /* Menu */
 
-/*header ul li {*/
-    /*padding: 0 11px;*/
-    /*float: left;*/
-/*}*/
+header {
+    background: #000000;
+}
 /*header ul li a {*/
     /*text-decoration: none;*/
     /*color: white;*/
