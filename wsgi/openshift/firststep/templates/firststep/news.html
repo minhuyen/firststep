@@ -3,7 +3,7 @@
 {% block title %}Tư vấn nhà đất Đà Nẵng{% endblock %}
 {% block content %}
     {% if search %}
-        <div id="news-search">
+        <!--<div id="news-search">
             <form action="{% url 'search' %}" method="post">
                 {% csrf_token %}
                 <div>
@@ -45,7 +45,7 @@
                 </div>
 
             </form>
-        </div>
+        </div> -->
     {% endif %}
     {% if list %}
         {% for ja in list %}
