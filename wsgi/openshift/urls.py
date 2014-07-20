@@ -13,5 +13,6 @@ urlpatterns = patterns('',
     #url(r'^lien-he/$', 'firststep.views.sendMail', name='sendMail'),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^redactor/', include('redactor.urls')),
-    url(r'^(?P<cat_key>[-\w]+)/$', 'firststep.views.viewCategory', name='viewCategory')
+    url(r'^search/$',"firststep.views.search", name='search'),
+    url(r'^(?P<cat_key>[-\w]+)/$', 'firststep.views.viewCategory', name='viewCategory'),
 ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

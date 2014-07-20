@@ -58,7 +58,8 @@ INSTALLED_APPS = (
     'polls',
     'firststep',
     'redactor',
-	'geoposition',)
+	'geoposition',
+)
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
