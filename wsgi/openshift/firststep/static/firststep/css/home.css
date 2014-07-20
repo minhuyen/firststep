@@ -287,5 +287,9 @@ section#slider-bot ul li div.infor-sliderbot p:last-child {
         display: none;
     }
 
+    section#slider-bot ul li div.infor-sliderbot p {
+        font-size: 20px;
+    }
+
     /* # slider-bot home */
 }

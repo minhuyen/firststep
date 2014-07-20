@@ -182,3 +182,10 @@ body.rtl .formError .formErrorArrow {
 	border: none;
 	background: #ddd;
 }
+
+@media only screen and (max-width: 767px) {
+    .formError {
+        left: 78px !important;
+        margin-top: -22px !important;
+    }
+}
