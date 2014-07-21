@@ -149,29 +149,48 @@ def search(request):
         price1 = request.POST.get("price1", 0)
         area = request.POST.get("area", 0)
         area1 = request.POST.get("area1", 0)
-        #print('category: %s' % category)
-        #print('location: %s' % location)
-        #print('price: %s' % price)
-        #print('price1: %s' % price1)
-        #print('area: %s' % area)
-        #print('area1: %s' % area1)
+        print('category: %s' % category)
+        print('location: %s' % location)
+        print('price: %s' % price)
+        print('price1: %s' % price1)
+        print('area: %s' % area)
+        print('area1: %s' % area1)
+        try:
+            cats = Category.objects.filter(parent=None).order_by('position')
+        except Category.DoesNotExist:
+            cats = []
 
+        try:
+            locations = Location.objects.all().order_by('position')
+        except Location.DoesNotExist:
+            locations = []
+        check = False
         journalArticels= JournalArticle.objects
         if category and category != "0":
+            check = True
             journalArticels = JournalArticle.objects.filter(category_id=category)
         if location and location != "0":
+            check = True
             journalArticels = journalArticels.filter(location_id=location)
         if price and price != "0":
+            check = True
             journalArticels = journalArticels.filter(price__gte=price)
         if price1 and price1 != "0":
+            check = True
             journalArticels = journalArticels.filter(price__lte=price1)
         if area and area != "0":
+            check = True
             journalArticels = journalArticels.filter(area__gte=area)
         if area1 and area1 != "0":
+            check = True
             journalArticels = journalArticels.filter(area__lte=area1)
 
-        #print("query: %s" %journalArticels.query)
-        context = {'list': journalArticels, "search": 1}
+        if check != True:
+            journalArticels = []
+        print("query: %s" %journalArticels.query)
+        context = {'list': journalArticels, "search": 1, "cats": cats, "locations": locations, "category_id": category,
+                   "location_id": location, "price": price, "price1": price1, "area": area, "area1": area1}
+        print journalArticels
         return render(request, 'firststep/news.html', context)
     else:
         return HttpResponseRedirect(reverse('home'))

@@ -86,7 +86,7 @@
     padding: 0 15px;
 }
 
-@media (max-width: 767px) {
+@media screen and (max-width: 767px) {
     .navbar .navbar-brand {
         display: block;
     }

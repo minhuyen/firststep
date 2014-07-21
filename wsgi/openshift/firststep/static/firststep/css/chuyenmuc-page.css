@@ -59,6 +59,23 @@ section#tin .infor-tin div a:hover {
     font-size: 25px !important;
     margin: 0; padding: 0;
 }
+
+div#news-search{
+    overflow: hidden;
+}
+
+#news-search div{
+    position: relative;
+    float: left;
+    width: 100%;
+    margin: 10px;
+}
+
+#news-search div#col-right, #news-search div#col-left{
+    margin: 0;
+    width: auto;
+}
+
 /* Trang chuyen muc */
 
 

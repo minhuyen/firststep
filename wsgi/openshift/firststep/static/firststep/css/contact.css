@@ -45,12 +45,12 @@ section#contact p {
     float: left;
 }
 
-select {
-    border: 1px solid black;
-    float: left;
-    height: 24px;
+/*select {*/
+    /*border: 1px solid black;*/
+    /*float: left;*/
+    /*height: 24px;*/
     /*margin: 0 0 0 -40px;*/
-}
+/*}*/
 #firstname, #lastname {
     width: 160px;
     border: 1px solid black;

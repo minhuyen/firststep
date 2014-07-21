@@ -3,49 +3,64 @@
 {% block title %}Tư vấn nhà đất Đà Nẵng{% endblock %}
 {% block content %}
     {% if search %}
-        <!--<div id="news-search">
+        <div id="news-search">
             <form action="{% url 'search' %}" method="post">
                 {% csrf_token %}
+            <div id="col-left">
                 <div>
                     <input type="radio" name="type-land" value="1" checked="true"> Nhà đất bán
                     <input type="radio" name="type-land" value="2"> Nhà đất cho thuê
-                    <b>Loại đất:</b>
+                </div>
+                <div>
+                    <p><b>Loại đất:</b></p>
                     <select name="category">
-                        <option value="0">----Chọn loại đất----</option>
+                        <option value="0">----Chọn----</option>
                         {% if cats %}
                             {% for cat in cats %}
-                                <option value="{{ cat.id }}">{{ cat.name }}</option>
+                                {% ifequal cat.id|slugify category_id %}
+                                    <option value="{{ cat.id }}" selected="selected">{{ cat.name }}</option>
+                                {% else %}
+                                    <option value="{{ cat.id }}">{{ cat.name }}</option>
+                                {% endifequal %}
+
                             {% endfor %}
                         {% endif %}
                     </select>
-                </div>
-                <div>
-                    <p> <b>Quận:</b></p>
+                    <p><b>Quận:</b></p>
                     <select name="location">
-                        <option value="0">----Chọn quận----</option>
+                        <option value="0">----Chọn----</option>
                         {% if locations %}
                             {% for lo in locations %}
-                                <option value="{{ lo.id }}">{{ lo.name }}</option>
+                                {% ifequal lo.id|slugify location_id %}
+                                    <option value="{{ lo.id }}" selected="selected">{{ lo.name }}</option>
+                                {% else %}
+                                    <option value="{{ lo.id }}">{{ lo.name }}</option>
+                                {% endifequal %}
                             {% endfor %}
                         {% endif %}
                     </select>
                 </div>
+            </div>
+            <div id="col-right">
                 <div>
-                    <p> <b>Giá(Triệu):</b></p>
-                    Từ: <input type="text" name="price" value="0">
-                    Đến: <input type="text" name="price1" value="0">
+                    <p><b>Giá(Triệu):</b></p>
+                    Từ: <input type="text" name="price" value="{{ price }}">
+                    Đến: <input type="text" name="price1" value="{{ price1 }}">
                 </div>
                 <div>
-                    <p> <b>Diện tích(m2):</b> </p>
-                    Từ: <input type="text" name="area" value="0">
-                    Đến: <input type="text" name="area1" value="0">
+                    <p><b>Diện tích(m2):</b></p>
+                    Từ: <input type="text" name="area" value="{{ area }}">
+                    Đến: <input type="text" name="area1" value="{{ area1 }}">
                 </div>
+            </div>
+
                 <div>
                     <input type="submit" value="Search">
                 </div>
 
             </form>
-        </div> -->
+        </div>
+        <hr>
     {% endif %}
     {% if list %}
         {% for ja in list %}
