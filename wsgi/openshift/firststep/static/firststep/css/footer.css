@@ -67,7 +67,8 @@ footer ul li img {
     footer ul li:nth-child(2) {
         top: 0;
         left: 50%;
-        padding-left: 65px;
+        padding-left: 0;
+        width: 205px;
     }
     footer ul li:nth-child(3) {
         top: 50px;
@@ -92,6 +93,7 @@ footer ul li img {
         margin: 0 auto !important;
         clear: both;
         float: none !important;
+        text-align: center;
     }
 
     footer ul li:first-child,
@@ -105,4 +107,8 @@ footer ul li img {
         left: 0;
     }
 
+    footer ul li:first-child { width: 226px;}
+    footer ul li:nth-child(2) { width: 145px; }
+    footer ul li:nth-child(3) { width: 178px; }
+    footer ul li:last-child { text-align: center;   }
 }
