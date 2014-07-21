@@ -86,14 +86,7 @@
     padding: 0 15px;
 }
 
-
-@media (min-width: 1024px) {
-    .navbar .navbar-brand {
-        display: none;
-    }
-}
-
-@media (max-width: 1024px) {
+@media (max-width: 767px) {
     .navbar .navbar-brand {
         display: block;
     }
@@ -118,5 +111,15 @@
 
     .dropdown-menu>li>a {
         line-height: 20px;
+    }
+}
+
+@media (min-width: 768px) {
+    .navbar .navbar-brand {
+        display: none;
+    }
+
+    .nav > li {
+        border: none;
     }
 }

@@ -56,7 +56,7 @@ section#tin .infor-tin div a:hover {
     color: blue;
 }
 .title-tin {
-    font-size: 25px !important;
+    font-size: 20px !important;
     margin: 0; padding: 0;
 }
 /* Trang chuyen muc */
@@ -81,10 +81,18 @@ section#tin .infor-tin div a:hover {
         height: 160px;
         font-size: 14px;
     }
-    .title-tin {
-        font-size: 20px !important;
-    }
+
     section#tin .infor-tin div p {
         margin: 0 0 10px 0 !important;
     }
+}
+
+@media only screen and (max-width: 400px) {
+    section#tin .infor-tin div {
+        height: 190px;
+    }
+    section#tin .infor-tin {
+        padding-bottom: 69%;
+    }
+
 }
