@@ -40,7 +40,8 @@ section#contact p {
     line-height: normal !important;
 }
 
-.label {
+#contact .label {
+    color: #333 !important;
     width: 80px;
     float: left;
 }
@@ -76,14 +77,14 @@ section#contact p {
 
 
 #contact .form input {
-    width: 500px;
+    width: 470px;
     float: right;
     height: 25px;
     border: 1px solid black;
 }
 #contact .form textarea{
-    width: 496px;
-    max-width: 496px;
+    width: 470px;
+    max-width: 470px;
     margin: 0;
     height: 160px;
     float: right;
@@ -134,8 +135,8 @@ section#contact p {
 
     #contact .form input,
     #contact .form textarea {
-        width: 97%;
-        max-width: 97%;
+        width: 100%;
+        max-width: 100%;
         padding: 1%;
     }
     #formID {
@@ -147,4 +148,8 @@ section#contact p {
         text-align: left !important;
     }
 
+
+    #contact .label {
+        padding: 0 !important;
+    }
 }

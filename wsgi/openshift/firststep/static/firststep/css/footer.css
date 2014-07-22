@@ -93,7 +93,7 @@ footer ul li img {
         margin: 0 auto !important;
         clear: both;
         float: none !important;
-        text-align: center;
+        text-align: right;
     }
 
     footer ul li:first-child,
