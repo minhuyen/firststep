@@ -10,17 +10,22 @@ $(document).ready(function(){
 //            $('.sub-category-list').hide();
 //        });
 //    });
-    $('.navbar .dropdown').each(function(){
-        $(this).hover(
-            function(){
-                $(this).children('.dropdown-menu').show();
-                $(this).children('a').css('color','#000000');
-            },
-            function(){
-                $('.dropdown-menu').hide();
-                $(this).children('a').css('color','#ffffff');
-            }
-        );
+    if($(window).width()>1024){
+        $('.navbar .dropdown').each(function(){
+            $(this).hover(
+                function(){
+                    $(this).children('.dropdown-menu').show();
+                    $(this).children('a').css('color','#000000');
+                },
+                function(){
+                    $('.dropdown-menu').hide();
+                    $(this).children('a').css('color','#ffffff');
+                }
+            );
+        });
+    }
+    $('.navbar .caret').click(function(){
+        $(this).parent('li').children('.dropdown-menu').show();
     });
 
     $('.navbar .navbar-toggle').click(function(){

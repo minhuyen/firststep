@@ -64,7 +64,7 @@
 .dropdown-menu > li > a:hover,
 .dropdown-menu > li > a:focus {
     background: #ffffff;
-    color: #000000;
+    color: #000000 !important;
 }
 
 .navbar .navbar-nav {
@@ -84,6 +84,10 @@
 
 .navbar .navbar-header {
     padding: 0 15px;
+}
+
+.navbar .caret {
+    display: none;
 }
 
 @media screen and (max-width: 767px) {
@@ -111,6 +115,20 @@
 
     .dropdown-menu>li>a {
         line-height: 20px;
+    }
+
+    .navbar .caret {
+        display: block;
+        color: #ffffff;
+        border-top: 8px solid;
+        border-right: 7px solid transparent;
+        border-left: 7px solid transparent;
+        top: 20px;
+        /*margin-right: 20px;*/
+        /*float: right;*/
+        position: absolute;
+        right: 20px;
+        z-index: 1;
     }
 }
 
