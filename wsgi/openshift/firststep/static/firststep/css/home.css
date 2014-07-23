@@ -125,6 +125,9 @@ section#news-2columns div:first-child div {
 
 #search .btn-search{
     width: 100%;
+    height: 40px;
+    margin-bottom: 20px;
+    margin-top: 11px;
 }
 
 section#news-2columns div#search div.type{
@@ -133,6 +136,14 @@ section#news-2columns div#search div.type{
 
 section#news-2columns div#search div.type select{
     width: 100%;
+    border: 1px solid #fff;
+    line-height: 40px;
+    height: 40px;
+
+}
+
+div#search div.type input{
+    height: 40px;
 }
 
 section#news-2columns div#search div{
@@ -227,6 +238,7 @@ section#slider-bot {
 section#slider-bot ul li {
     position: relative !important;
     width: 100% !important;
+    margin-bottom: 1px !important;
     /*padding-bottom: 34%; */
 }
 section#slider-bot ul li div:first-child {
@@ -284,7 +296,7 @@ section#slider-bot ul li div.infor-sliderbot p:last-child {
     }
     section#news-2columns div:last-child {
         width: 100%;
-        padding-bottom: 100%;
+        /*padding-bottom: 100%;*/
     }
     /* # news-2columns - HomePage */
 

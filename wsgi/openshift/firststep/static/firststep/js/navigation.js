@@ -15,11 +15,11 @@ $(document).ready(function(){
             $(this).hover(
                 function(){
                     $(this).children('.dropdown-menu').show();
-                    $(this).children('a').css('color','#000000');
+//                    $(this).children('a').css('color','#000000');
                 },
                 function(){
                     $('.dropdown-menu').hide();
-                    $(this).children('a').css('color','#ffffff');
+//                    $(this).children('a').css('color','#ffffff');
                 }
             );
         });
