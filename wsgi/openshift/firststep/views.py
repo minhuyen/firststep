@@ -187,7 +187,7 @@ def search(request):
 
         if check != True:
             journalArticels = []
-        print("query: %s" %journalArticels.query)
+        #print("query: %s" %journalArticels.query)
         context = {'list': journalArticels, "search": 1, "cats": cats, "locations": locations, "category_id": category,
                    "location_id": location, "price": price, "price1": price1, "area": area, "area1": area1}
         print journalArticels

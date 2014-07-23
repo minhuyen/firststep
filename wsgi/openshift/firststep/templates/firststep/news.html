@@ -8,10 +8,7 @@
                 {% csrf_token %}
             <div id="col-left">
                 <div>
-                    <h3>Tìm kiếm</h3>
-                </div>
-                <div>
-                    <p><b>Loại đất:</b></p>
+                    <p><b>Loại sản phẩm:</b></p>
                     <select name="category">
                         <option value="0">----Chọn----</option>
                         {% if cats %}
@@ -25,6 +22,8 @@
                             {% endfor %}
                         {% endif %}
                     </select>
+                </div>
+                <div>
                     <p><b>Quận:</b></p>
                     <select name="location">
                         <option value="0">----Chọn----</option>
