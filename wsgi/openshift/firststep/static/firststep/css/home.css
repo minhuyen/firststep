@@ -83,7 +83,7 @@ section#news-2columns div:first-child {
     position: relative;
 
 }
-section#news-2columns div:last-child {
+section#news-2columns > div:last-child {
     width: 33.3333%;
     float: left;
     display: inline-block;
@@ -144,6 +144,7 @@ section#news-2columns div#search div.type select{
 
 div#search div.type input{
     height: 40px;
+    width: 100%;
 }
 
 section#news-2columns div#search div{
@@ -293,7 +294,7 @@ section#slider-bot ul li div.infor-sliderbot p:last-child {
         width: 100%;
         padding-bottom: 50%;
     }
-    section#news-2columns div:last-child {
+    section#news-2columns > div:last-child {
         width: 100%;
         /*padding-bottom: 100%;*/
     }
