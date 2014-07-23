@@ -7,7 +7,7 @@
 		    <ul class="bxslider-top">
             {% for ja in list6 %}
                 <li><img src="{{ MEDIA_URL}}{{ ja.show_img }}">
-                    <a href="{{ ja.category.get_absolute_url }}">read more</a>
+                    <a href="{{ ja.category.get_absolute_url }}" data-text="read more">read more</a>
                     <p>{{ ja.title}}</p>
                 </li>
             {% endfor %}
@@ -92,7 +92,7 @@
                     <div class=" bg-gray">
                         <p class="title">{{ categoryName2 }}</p>
                         <p class="sum">{{ list2.0.summary }}</p>
-                        <a href="{% url 'firststep:detail' list2.0.id %}">read more</a>
+                        <a href="{% url 'firststep:detail' list2.0.id %}" data-text="read more">read more</a>
                     </div>
                 </div>
         {% endif %}
@@ -104,7 +104,7 @@
                     <div class=" bg-gray">
                         <p class="title">{{ categoryName3 }}</p>
                         <p class="sum">{{ list3.0.summary }}</p>
-                        <a href="{% url 'firststep:detail' list3.0.id %}">read more</a>
+                        <a href="{% url 'firststep:detail' list3.0.id %}" data-text="read more">read more</a>
                     </div>
                 </div>
         {% endif %}
@@ -116,7 +116,7 @@
                     <div class=" bg-gray">
                         <p class="title">{{ categoryName4 }}</p>
                         <p class="sum">{{ list4.0.summary }}</p>
-                        <a href="{% url 'firststep:detail' list4.0.id %}">read more</a>
+                        <a href="{% url 'firststep:detail' list4.0.id %}" data-text="read more">read more</a>
                     </div>
                 </div>
         {% endif %}
@@ -150,3 +150,4 @@
 	    </script>
     {% endif %}
 {% endblock %}
+
