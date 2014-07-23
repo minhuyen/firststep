@@ -48,10 +48,7 @@ section#slider-top ul li a {
     background: #000000;
     overflow: hidden;
 }
-/*section#slider-top ul li a:hover {*/
-    /*color: chartreuse;*/
-    /*border-color: chartreuse;*/
-/*}*/
+
 section#slider-top ul li p {
     color: white;
     z-index: 4;
