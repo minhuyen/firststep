@@ -37,11 +37,8 @@
                     <!-- <img src="{{ MEDIA_URL }}{{ list1.0.small_img }}"> -->
                     <form action="{% url 'search' %}" method="post">
                         {% csrf_token %}
-                        <div>
-                            <input type="radio" name="type-land" value="1" checked="true"> Nhà đất bán
-                            <input type="radio" name="type-land" value="2"> Nhà đất cho thuê
-                        </div>
-                        <div>
+                        <h3>Tìm kiếm</h3>
+                        <div class="type">
                             <p> <b>Loại đất:</b></p>
                             <select name="category">
                                 <option value="0">----Chọn loại đất----</option>
@@ -52,7 +49,7 @@
                                 {% endif %}
                             </select>
                         </div>
-                        <div>
+                        <div class="type">
                             <p> <b>Quận:</b></p>
                             <select name="location">
                                 <option value="0">----Chọn quận----</option>
@@ -65,16 +62,16 @@
                         </div>
                         <div>
                             <p> <b>Giá(Triệu):</b></p>
-                            Từ: <input type="text" name="price" value="">
-                            Đến: <input type="text" name="price1" value="">
+                            <span>Từ: </span><input type="text" name="price" value="">
+                            <span>Đến: </span><input type="text" name="price1" value="">
                         </div>
                         <div>
                             <p> <b>Diện tích(m2):</b> </p>
-                            Từ: <input type="text" name="area" value="">
-                            Đến: <input type="text" name="area1" value="">
+                            <span>Từ: </span><input type="text" name="area" value="">
+                            <span>Đến: </span><input type="text" name="area1" value="">
                         </div>
                         <div>
-                            <input type="submit" value="Search">
+                            <input class="btn-search" type="submit" value="Search">
                         </div>
 
                     </form>

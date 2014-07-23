@@ -110,6 +110,30 @@ section#news-2columns div:first-child div {
     color: white;
     background: url(../images/icon/bgvideo.png);
 }
+#search{
+    background-color: #181818;
+}
+
+#search h3{
+    text-align: center;
+    color: white;
+}
+
+#search p, #search span{
+    color: white;
+}
+
+#search .btn-search{
+    width: 100%;
+}
+
+section#news-2columns div#search div.type{
+    width: 50%;
+}
+
+section#news-2columns div#search div.type select{
+    width: 100%;
+}
 
 section#news-2columns div#search div{
     position: relative;
