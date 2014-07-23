@@ -130,6 +130,9 @@
         right: 20px;
         z-index: 1;
     }
+    .navbar-default .navbar-nav > li > a {
+        margin-right: 50px;
+    }
 }
 
 @media (min-width: 768px) {
