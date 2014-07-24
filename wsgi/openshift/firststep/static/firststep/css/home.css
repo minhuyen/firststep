@@ -109,6 +109,8 @@ section#news-2columns div:first-child div {
     color: white;
     background: url(../images/icon/bgvideo.png);
 }
+
+/* Start Search Form */
 #search{
     background-color: #181818;
 }
@@ -152,6 +154,8 @@ section#news-2columns div#search div{
     float: left;
     padding: 13px 10px;
 }
+
+/* End Search Form*/
 
 
 section#news-2columns div:first-child div p {
@@ -240,7 +244,7 @@ section#slider-bot {
 section#slider-bot ul li {
     position: relative !important;
     width: 100% !important;
-    margin-bottom: 1px !important;
+    margin-bottom: 0px !important;
     /*padding-bottom: 34%; */
 }
 section#slider-bot ul li div:first-child {
@@ -273,6 +277,25 @@ section#slider-bot ul li div.infor-sliderbot p:first-child,
 section#slider-bot ul li div.infor-sliderbot p:last-child {
     font-size: 20px !important;
     line-height: 25px !important;
+}
+
+section#slider-bot .bx-pager.bx-default-pager{
+    display: none;
+}
+
+section#slider-bot .bx-wrapper .bx-prev{
+    background: url(../images/icon/left.png);
+    left: 55px;
+}
+
+section#slider-bot .bx-wrapper .bx-next{
+    background: url(../images/icon/right.png);
+    right: 55px;
+}
+
+.bx-wrapper .bx-controls-direction a{
+    width: 31px;
+    height: 56px;
 }
 
 /* # slider-bot home */

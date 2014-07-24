@@ -9,25 +9,27 @@ footer {
 footer > ul {
     list-style: none;
     line-height: 70px;
-    margin: 0 auto;
+    margin: 0 35px;
     padding: 0;
-    width: 999px;
+    width: auto;
     height: 70px;
 }
 footer ul li {
     padding: 0 20px;
     float: left;
     text-align: right;
+    font-size: 20px;
+    width: auto;
 }
-footer ul li:first-child {
-    width: 245px;
-}
-footer ul li:nth-child(2) {
-    width: 160px;
-}
-footer ul li:nth-child(3) {
-    width: 195px;
-}
+/*footer ul li:first-child {*/
+    /*width: 245px;*/
+/*}*/
+/*footer ul li:nth-child(2) {*/
+    /*width: 160px;*/
+/*}*/
+/*footer ul li:nth-child(3) {*/
+    /*width: 195px;*/
+/*}*/
 footer ul li:last-child {
     color: #292829;
     float: right;
@@ -36,9 +38,9 @@ footer ul li:last-child {
 footer ul li img {
     width: 32px;
     height: 32px;
-    margin-left: -42px;
-    position: absolute;
-    margin-top: 18px;
+    margin-right: 15px;
+    /*position: absolute;*/
+    /*margin-top: 18px;*/
 }
 
 /* Ipad > Iphone ngang */
