@@ -25,10 +25,19 @@ $(document).ready(function(){
         });
     }
     $('.navbar .caret').click(function(){
-        $(this).parent('li').children('.dropdown-menu').show();
+        $(this).parent('li').children('.dropdown-menu').toggle();
     });
+    if($(window).width()>768){
+        $('.navbar .navbar-toggle').click(function(){
+    //        $('.navbar .collapse').toggle();
+            $('.navbar .navbar-nav').toggle();
+        });
+    };
+    if($(window).width()<=768){
+        $('.navbar .navbar-toggle').click(function(){
+            $('.navbar .navbar-collapse').toggle();
+//            $('.navbar .navbar-nav').toggle();
+        });
+    };
 
-    $('.navbar .navbar-toggle').click(function(){
-        $('.navbar .navbar-collapse').toggle();
-    });
 })
