@@ -293,7 +293,7 @@ section#slider-bot .bx-wrapper .bx-next{
     right: 55px;
 }
 
-.bx-wrapper .bx-controls-direction a{
+section#slider-bot .bx-wrapper .bx-controls-direction a{
     width: 31px;
     height: 56px;
 }
