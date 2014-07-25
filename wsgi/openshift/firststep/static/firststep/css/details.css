@@ -1,10 +1,16 @@
 /* Detail */
+section#detail{
+    width: 980px;
+    position: relative;
+    overflow: hidden;
+    margin: 60px auto;
+}
 
 .title-detail {
     font-size: 30px !important;
     line-height: normal !important;
     padding-bottom: 30px;
-    text-align: center;
+    text-align: left;
 }
 .small-img-detail {
     position: relative;
@@ -16,6 +22,13 @@
     width: 100%;
     height: 100%;
     top: 0;	left: 0;
+}
+
+.article-info{
+    text-align: left;
+    margin: 5px 0 0 0;
+    font-style: italic;
+    position: relative;
 }
 
 

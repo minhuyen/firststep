@@ -44,14 +44,10 @@ section#contact p {
     color: #333 !important;
     width: 80px;
     float: left;
+    padding: 0;
+    text-align: left;
 }
 
-/*select {*/
-    /*border: 1px solid black;*/
-    /*float: left;*/
-    /*height: 24px;*/
-    /*margin: 0 0 0 -40px;*/
-/*}*/
 #firstname, #lastname {
     width: 160px;
     border: 1px solid black;
