@@ -94,7 +94,7 @@
     -o-transform: translate3d(0, 0, 0);
     -ms-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
-    padding:10px 0 10px 20px;
+    padding:15px 0 10px 20px;
     z-index: 1;
 }
 .dropdown-menu {
@@ -225,7 +225,7 @@
 
     .navbar-nav > li {
         width: 100%;
-        border-right: 1px solid #ffffff;
+        /*border-right: 1px solid #ffffff;*/
         border-bottom: 1px solid #ffffff;
     }
 
@@ -258,7 +258,7 @@
 
     .navbar-nav > li {
         width: 100%;
-        border-right: 1px solid #ffffff;
+        /*border-right: 1px solid #ffffff;*/
         border-bottom: 1px solid #ffffff;
     }
     .navbar-nav > li > a {
