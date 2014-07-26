@@ -287,7 +287,11 @@ section#slider-bot ul li div.infor-sliderbot p {
     font-size: 36px;
     line-height: normal;
 }
-section#slider-bot ul li div.infor-sliderbot p:first-child,
+section#slider-bot ul li div.infor-sliderbot p:first-child {
+    font-size: 20px !important;
+    line-height: 25px !important;
+    text-transform: uppercase;
+}
 section#slider-bot ul li div.infor-sliderbot p:last-child {
     font-size: 20px !important;
     line-height: 25px !important;
