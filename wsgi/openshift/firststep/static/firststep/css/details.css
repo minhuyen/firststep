@@ -30,21 +30,50 @@ section#detail{
     font-style: italic;
     position: relative;
 }
+#detail .info{
+    width: 40%;
+    float: left;
+    padding: 0 20px 0 0;
+    text-align: right;
+}
+
+#detail .content{
+    float: left;
+    width: 60%;
+    padding-left: 20px;
+}
 
 
 /* Ipad */
-@media only screen and (max-width: 1020px ) {
-     .small-img-detail {
-         width: 600px;
-         padding-bottom: 365px;
-         margin: 0 auto;
-     }
+@media only screen and (max-width: 1024px ) and (min-width: 768px){
+    section#detail{
+        width: 90%;
+        margin: 30px auto;
+    }
+
+    .small-img-detail {
+     width: 100%;
+     padding-bottom: 365px;
+     margin: 0 auto;
+    }
+
 }
 
 /* Iphone */
 @media only screen and  (max-width: 767px ) {
-    .small-img-detail {
+    section#detail{
         width: 90%;
+        margin: 15px auto;
+    }
+    .small-img-detail {
+        width: 100%;
         padding-bottom: 55%;
+    }
+}
+
+@media only screen and (max-width:1024px){
+    section#detail .content{
+        width: 100%;
+        padding-left: 0;
     }
 }
