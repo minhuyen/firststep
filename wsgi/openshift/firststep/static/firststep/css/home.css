@@ -195,7 +195,7 @@ section#news-3columns .block-33 {
     margin: 0;
 }
 section#news-3columns .block-33 .bg-gray {
-    background: #181818;
+    background: black;
     position: absolute;
     width: 100%;
     height: 100%;
@@ -294,7 +294,11 @@ section#slider-bot ul li div.infor-sliderbot p {
     font-size: 36px;
     line-height: normal;
 }
-section#slider-bot ul li div.infor-sliderbot p:first-child,
+section#slider-bot ul li div.infor-sliderbot p:first-child {
+    font-size: 20px !important;
+    line-height: 25px !important;
+    text-transform: uppercase;
+}
 section#slider-bot ul li div.infor-sliderbot p:last-child {
     font-size: 20px !important;
     line-height: 25px !important;
