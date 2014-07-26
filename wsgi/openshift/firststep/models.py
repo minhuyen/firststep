@@ -6,10 +6,11 @@ from redactor.fields import RedactorField
 from geoposition.fields import GeopositionField
 
 # Create your models here.
-     
+
+
 class Category(models.Model):
     name = models.CharField(max_length=200)
-    cat_key = models.CharField(max_length=200, verbose_name='Key', blank=True)
+    cat_key = models.CharField(max_length=200, verbose_name='Key')
     position = models.IntegerField(default=0)
     pub_date = models.DateTimeField('date published', default=datetime.now)
     parent = models.ForeignKey('self', blank=True, null=True, related_name="children")
@@ -55,6 +56,7 @@ class Category(models.Model):
         p_list = self._recurse_for_parents(self)
         p_list.append(self.name)
         return self.get_separator().join(p_list)
+
 
 class Location(models.Model):
     name = models.CharField(max_length=150)
