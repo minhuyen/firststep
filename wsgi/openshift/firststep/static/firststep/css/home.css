@@ -203,12 +203,20 @@ section#news-3columns .block-33 img {
     left: 0;
 }
 
+section#news-3columns .block-33 .category-name {
+    font-size: 30px !important;
+    text-align: center;
+    color: white;
+    margin: 30px auto;
+    text-transform: uppercase;
+}
+
 section#news-3columns .block-33 .title {
     font-size: 20px !important;
     text-align: center;
     color: white;
     margin: 30px auto;
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
 }
 
 section#news-3columns .block-33 .sum {
