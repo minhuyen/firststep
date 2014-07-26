@@ -154,6 +154,13 @@ div#search div.type input{
     width: 100%;
 }
 
+div#search p.label{
+    padding-left: 20px;
+    margin: 0;
+    font-size: 14px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
 section#news-2columns div#search div{
     position: relative;
     width: 100%;
