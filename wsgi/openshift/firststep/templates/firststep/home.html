@@ -7,7 +7,7 @@
 		    <ul class="bxslider-top">
             {% for ja in list6 %}
                 <li><img src="{{ MEDIA_URL}}{{ ja.show_img }}">
-                    <a href="{{ ja.category.get_absolute_url }}">read more</a>
+                    <a href="{{ ja.category.get_absolute_url }}" data-text="read more">read more</a>
                     <p>{{ ja.title}}</p>
                 </li>
             {% endfor %}
@@ -17,13 +17,16 @@
     <script type="text/javascript">
 		$(document).ready(function() {
 			$('.bxslider-top').bxSlider({
-			  mode: 'fade',
-			  controls: false,
-			  //speed: 300,
-			  slideMargin: 0,
-              auto:true,
-              pause: 2000
-
+			  // mode: 'fade',
+			  // controls: false,
+			  // //speed: 300,
+			  // slideMargin: 0,
+     //          auto:true,
+     //          pause: 2000
+                mode: 'vertical',
+                slideMargin: 0,
+                auto: true,
+                pause: 5000
 			});
 		});
 	</script>
@@ -40,7 +43,7 @@
                         {% csrf_token %}
                         <h3>Tìm kiếm</h3>
                         <div class="type">
-                            <p> <b>Loại đất:</b></p>
+                            <p> <b>Loại sản phẩm:</b></p>
                             <select name="category">
                                 <option value="0">----Chọn loại đất----</option>
                                 {% if cats %}
@@ -61,19 +64,19 @@
                                 {% endif %}
                             </select>
                         </div>
-                        <p style="padding-left: 10px; margin: 0;"> <b>Giá (triệu đồng):</b></p>
+                        <p class="label"> <b>Giá (triệu đồng):</b></p>
                         <div class="type">
-                            <span>Từ: </span><input type="text" name="price" value="">
+                            <input type="text" name="price" value="" placeholder="Từ">
                         </div>
                         <div class="type">
-                            <span>Đến: </span><input type="text" name="price1" value="">
+                            <input type="text" name="price1" value="" placeholder="Đến">
                         </div>
-                        <p style="padding-left: 10px; margin: 0;"> <b>Diện tích (m2):</b> </p>
+                        <p class="label"> <b>Diện tích (m2):</b> </p>
                         <div class="type">
-                            <span>Từ: </span><input type="text" name="area" value="">
+                            <input type="text" name="area" value="" placeholder="Từ">
                         </div>
                         <div class="type">
-                            <span>Đến: </span><input type="text" name="area1" value="">
+                            <input type="text" name="area1" value="" placeholder="Đến">
                         </div>
                         <div>
                             <input class="btn-search" type="submit" value="Search">
@@ -91,9 +94,10 @@
                 </div>
                 <div class="block-33">
                     <div class=" bg-gray">
-                        <p class="title">{{ categoryName2 }}</p>
+                        <p class="category-name">{{ categoryName2 }}</p>
+                        <p class="title">{{ list2.0.title }}</p>
                         <p class="sum">{{ list2.0.summary }}</p>
-                        <a href="{% url 'firststep:detail' list2.0.id %}">read more</a>
+                        <a href="{% url 'firststep:detail' list2.0.id %}" data-text="read more">read more</a>
                     </div>
                 </div>
         {% endif %}
@@ -103,9 +107,10 @@
                 </div>
                 <div class="block-33">
                     <div class=" bg-gray">
-                        <p class="title">{{ categoryName3 }}</p>
+                        <p class="category-name">{{ categoryName3 }}</p>
+                        <p class="title">{{ list3.0.title }}</p>
                         <p class="sum">{{ list3.0.summary }}</p>
-                        <a href="{% url 'firststep:detail' list3.0.id %}">read more</a>
+                        <a href="{% url 'firststep:detail' list3.0.id %}" data-text="read more">read more</a>
                     </div>
                 </div>
         {% endif %}
@@ -115,9 +120,10 @@
                 </div>
                 <div class="block-33">
                     <div class=" bg-gray">
-                        <p class="title">{{ categoryName4 }}</p>
+                        <p class="category-name">{{ categoryName4 }}</p>
+                        <p class="title">{{ list4.0.title }}</p>
                         <p class="sum">{{ list4.0.summary }}</p>
-                        <a href="{% url 'firststep:detail' list4.0.id %}">read more</a>
+                        <a href="{% url 'firststep:detail' list4.0.id %}" data-text="read more">read more</a>
                     </div>
                 </div>
         {% endif %}
@@ -151,3 +157,5 @@
 	    </script>
     {% endif %}
 {% endblock %}
+
+

@@ -42,19 +42,22 @@ section#tin .infor-tin div {
 }
 section#tin .infor-tin div a {
     width: 96px;
-    height: 35px;
-    border: 1px solid black;
-    color: black;
+    height: 40px;
+    border: 1px solid #000000;
+    color: #000000;
     text-align: center;
     position: relative;
     display: block;
     text-decoration: none;
-    line-height: 35px;
+    line-height: 40px;
+    background: #ffffff;
+    overflow: hidden;
+    /*padding: 10px 0;*/
 }
-section#tin .infor-tin div a:hover {
-    border: 1px solid blue;
-    color: blue;
-}
+/*section#tin .infor-tin div a:hover {*/
+    /*border: 1px solid blue;*/
+    /*color: blue;*/
+/*}*/
 .title-tin {
     font-size: 20px !important;
     margin: 0; padding: 0;
@@ -78,6 +81,46 @@ div#news-search{
 
 /* Trang chuyen muc */
 
+@media (min-width: 1024px) {
+    section#tin .infor-tin div a:after {
+        content: attr(data-text);
+        color: #ffffff;
+        position: absolute;
+        left: 0;
+        right: 0;
+        /*padding-top: 30px;*/
+        top:0;
+        -webkit-transform: translate3d(0, 100%, 0);
+        -moz-transform: translate3d(0, 100%, 0);
+        -o-transform: translate3d(0, 100%, 0);
+        -ms-transform: translate3d(0, 100%, 0);
+        transform: translate3d(0, 100%, 0);
+        -webkit-transition: -webkit-transform 0.85s cubic-bezier(0.19, 1, 0.22, 1);
+        -moz-transition: -moz-transform 0.85s cubic-bezier(0.19, 1, 0.22, 1);
+        -o-transition: -o-transform 0.85s cubic-bezier(0.19, 1, 0.22, 1);
+        -ms-transition: -ms-transform 0.85s cubic-bezier(0.19, 1, 0.22, 1);
+        transition: transform 0.85s cubic-bezier(0.19, 1, 0.22, 1);
+        text-align: center;
+        background: #000;
+        height: 40px;
+    }
+
+    section#tin .infor-tin div a:hover:after {
+        -webkit-transition-duration: 1s;
+        -moz-transition-duration: 1s;
+        -o-transition-duration: 1s;
+        -ms-transition-duration: 1s;
+        transition-duration: 1s;
+        -webkit-transform: translate3d(0, 0, 0);
+        -moz-transform: translate3d(0, 0, 0);
+        -o-transform: translate3d(0, 0, 0);
+        -ms-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+        border: 1px solid #000000;
+        /*padding:15px 0;*/
+    }
+    
+}
 
 @media only screen and (max-width: 767px) {
     section#tin .imgTin,

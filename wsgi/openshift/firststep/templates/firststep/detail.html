@@ -5,20 +5,20 @@
     <div class="contact-img-top">
 		<img src="{{ MEDIA_URL }}{{ ja.article_img }}">
 	</div>
-    <section id="contact">
+    <section id="detail">
 		<div class="infor">
 			<p class="title-detail">{{ ja.title }}</p>
 			<div class="small-img-detail">
 				<img src="{{ MEDIA_URL }}{{ ja.small_img }}">
 			</div>
-			<div style="text-align:center;margin: 5px 0 0 0;font-style: italic;position: relative;">
+			<div class="article-info">
 				<p>Diện tích: {{ja.area}} m²</p>
 				<p>Giá: {{ja.price}} Triệu</p>
 				<p>Khu vực: {{ja.location.name}}</p>
 			</div>
 		</div>
 		<!-- # infor -->
-		<div class="form">
+		<div class="content">
             {% autoescape off %}
 			    {{ ja.content }}
             {% endautoescape %}
