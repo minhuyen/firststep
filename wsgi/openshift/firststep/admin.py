@@ -44,14 +44,22 @@ class JournalArticleAdmin(admin.ModelAdmin):
     list_filter = ['pub_date']
     search_fields = ['title']
     ordering = ['-pub_date']
+
+
 class ContactInfoAdminFrom(forms.ModelForm):
     description = forms.CharField(widget=forms.Textarea)
+
 
 class ContactInfoAdmin(admin.ModelAdmin):
     form = ContactInfoAdminFrom
     fields = ['company', 'address', 'name', 'phone', 'email', 'website', 'description', 'position']
 
+
+class HomeAdminForm(forms.ModelForm):
+    title = forms.CharField(widget=forms.Textarea)
+
 class HomeAdmin(admin.ModelAdmin):
+    form = HomeAdminForm
     fields = ['category', 'title', 'position', 'show_img', 'pub_date']
     list_display = ['category', 'title', 'position', 'pub_date']
     

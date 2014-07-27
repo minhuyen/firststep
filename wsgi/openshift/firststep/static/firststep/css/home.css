@@ -200,6 +200,14 @@ section#news-3columns .block-33 {
     margin: 0;
     overflow: hidden;
 }
+
+/*section#news-3columns .block-33:after{*/
+    /*border: 10px solid transparent;*/
+    /*border-top-color: #333;*/
+    /*top: 100%;*/
+    /*left: 50%;*/
+    /*margin-left: -10px;*/
+/*}*/
 section#news-3columns .block-33 .bg-gray {
     background: black;
     position: absolute;
@@ -258,6 +266,10 @@ section#news-3columns .block-33 a {
     line-height: 40px;
     overflow: hidden;
     background: #000000;
+}
+
+section#news-3columns .block-33{
+    background: url(../images/arrow.png) no-repeat center bottom;
 }
 /* # news-3columns - HomePage */
 section#news-3columns .block-33 img{
