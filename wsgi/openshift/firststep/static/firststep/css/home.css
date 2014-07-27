@@ -492,6 +492,9 @@ section#news-3columns .block-33 .sub-block {
         width: 100%;
         padding: 0 0 100% 0;
     }
+    section#news-3columns .block-33 .sum {
+        display: none;
+    }
     section#news-3columns .block-33 a:hover,
     section#news-3columns .block-33 a:focus {
         border: 1px solid chartreuse;
