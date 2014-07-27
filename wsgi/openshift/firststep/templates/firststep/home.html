@@ -88,58 +88,107 @@
             </section>
     {% endif %}
     <section id="news-3columns">
-        {% if list2 %}
+        <div class="desktop">
+            {% if list2 %}
+                    <div class="block-33">
+                        <img src="{{ MEDIA_URL }}{{ list2.0.small_img }}">
+                    </div>
+                    <div class="block-33">
+                        {% if list3 %}
+                            <div class="bg-gray-bottom">
+                                <div class="sub-block">
+                                    <p class="category-name">{{ categoryName3 }}</p>
+                                    <p class="title">{{ list3.0.title }}</p>
+                                    <p class="sum">{{ list3.0.summary|truncatewords:35 }}</p>
+                                    <a href="{% url 'firststep:detail' list3.0.id %}" data-text="read more">read more</a>
+                                </div>
+                            </div>
+                        {% endif %}
+                    </div>
+            {% endif %}
+            {% if list4 %}
+                    <div class="block-33">
+                        <img src="{{ MEDIA_URL }}{{ list4.0.small_img }}">
+                    </div>
+                    <div class="block-33">
+                        {% if list2 %}
+                            <div class="bg-gray">
+                                <div class="sub-block">
+                                    <p class="category-name">{{ categoryName2 }}</p>
+                                    <p class="title">{{ list2.0.title }}</p>
+                                    <p class="sum">{{ list2.0.summary|truncatewords:35 }}</p>
+                                    <a href="{% url 'firststep:detail' list2.0.id %}" data-text="read more">read more</a>
+                                </div>
+                            </div>
+                        {% endif %}
+
+                    </div>
+            {% endif %}
+            {% if list3 %}
+                    <div class="block-33">
+                        <img src="{{ MEDIA_URL }}{{ list3.0.small_img }}">
+                    </div>
+                    <div class="block-33">
+                        {% if list4 %}
+                            <div class="bg-gray">
+                                <div class="sub-block">
+                                    <p class="category-name">{{ categoryName4 }}</p>
+                                    <p class="title">{{ list4.0.title }}</p>
+                                    <p class="sum">{{ list4.0.summary|truncatewords:35  }}</p>
+                                    <a href="{% url 'firststep:detail' list4.0.id %}" data-text="read more">read more</a>
+                                </div>
+                            </div>
+                        {% endif %}
+                    </div>
+            {% endif %}
+        </div>
+        <div class="smart-phone">
+            {% if list2 %}
                 <div class="block-33">
                     <img src="{{ MEDIA_URL }}{{ list2.0.small_img }}">
                 </div>
                 <div class="block-33">
-                    {% if list3 %}
-                        <div class="bg-gray-bottom">
-                            <div class="sub-block">
-                                <p class="category-name">{{ categoryName3 }}</p>
-                                <p class="title">{{ list3.0.title }}</p>
-                                <p class="sum">{{ list3.0.summary|truncatewords:35 }}</p>
-                                <a href="{% url 'firststep:detail' list3.0.id %}" data-text="read more">read more</a>
-                            </div>
+                    <div class="bg-gray-bottom">
+                        <div class="sub-block">
+                            <p class="category-name">{{ categoryName2 }}</p>
+                            <p class="title">{{ list2.0.title }}</p>
+                            <p class="sum">{{ list2.0.summary|truncatewords:35 }}</p>
+                            <a href="{% url 'firststep:detail' list2.0.id %}" data-text="read more">read more</a>
                         </div>
-                    {% endif %}
+                    </div>
                 </div>
-        {% endif %}
-        {% if list4 %}
-                <div class="block-33">
-                    <img src="{{ MEDIA_URL }}{{ list4.0.small_img }}">
-                </div>
-                <div class="block-33">
-                    {% if list2 %}
-                        <div class="bg-gray">
-                            <div class="sub-block">
-                                <p class="category-name">{{ categoryName2 }}</p>
-                                <p class="title">{{ list2.0.title }}</p>
-                                <p class="sum">{{ list2.0.summary|truncatewords:35 }}</p>
-                                <a href="{% url 'firststep:detail' list2.0.id %}" data-text="read more">read more</a>
-                            </div>
-                        </div>
-                    {% endif %}
-
-                </div>
-        {% endif %}
-        {% if list3 %}
+            {% endif %}
+            {% if list3 %}
                 <div class="block-33">
                     <img src="{{ MEDIA_URL }}{{ list3.0.small_img }}">
                 </div>
                 <div class="block-33">
-                    {% if list4 %}
-                        <div class="bg-gray">
-                            <div class="sub-block">
-                                <p class="category-name">{{ categoryName4 }}</p>
-                                <p class="title">{{ list4.0.title }}</p>
-                                <p class="sum">{{ list4.0.summary|truncatewords:35  }}</p>
-                                <a href="{% url 'firststep:detail' list4.0.id %}" data-text="read more">read more</a>
-                            </div>
+                    <div class="bg-gray">
+                        <div class="sub-block">
+                            <p class="category-name">{{ categoryName3 }}</p>
+                            <p class="title">{{ list3.0.title }}</p>
+                            <p class="sum">{{ list3.0.summary|truncatewords:35 }}</p>
+                            <a href="{% url 'firststep:detail' list3.0.id %}" data-text="read more">read more</a>
                         </div>
-                    {% endif %}
+                    </div>
                 </div>
-        {% endif %}
+            {% endif %}
+            {% if list4 %}
+                <div class="block-33">
+                    <img src="{{ MEDIA_URL }}{{ list4.0.small_img }}">
+                </div>
+                <div class="block-33">
+                    <div class="bg-gray">
+                        <div class="sub-block">
+                            <p class="category-name">{{ categoryName4 }}</p>
+                            <p class="title">{{ list4.0.title }}</p>
+                            <p class="sum">{{ list4.0.summary|truncatewords:35  }}</p>
+                            <a href="{% url 'firststep:detail' list4.0.id %}" data-text="read more">read more</a>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
     </section>
     {% if list5 %}
         <section id="slider-bot">

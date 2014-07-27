@@ -191,6 +191,15 @@ section#news-2columns {
     overflow: hidden;
 
 }
+/* start add arrow on image */
+section#news-3columns .smart-phone{
+    display: none;
+}
+
+section#news-3columns .desktop{
+    display: block;
+}
+
 section#news-3columns .block-33 {
     position: relative;
     display: inline-block;
@@ -234,6 +243,8 @@ section#news-3columns .block-33 .bg-gray-bottom:after {
     left: 50%;
     margin-left: -30px;
 }
+
+/* end add arrow on image */
 
 section#news-3columns .block-33 img {
     position: absolute;
@@ -526,4 +537,23 @@ section#news-3columns .block-33 .sub-block {
     }
 
     /* # slider-bot home */
+
+    /*start add arrow on image */
+    section#news-3columns .desktop{
+        display: none;
+    }
+
+    section#news-3columns .smart-phone{
+        display: block;
+    }
+
+    section#news-3columns .block-33 .bg-gray:after {
+        border-top-color: #000;
+    }
+
+    section#news-3columns .block-33 .bg-gray-bottom:after {
+        border-bottom-color: #000;
+    }
+
+    /*end add arrow on image */
 }
