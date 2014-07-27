@@ -32,7 +32,8 @@ section#contact {
 section#contact p {
     margin: 0;
     font-size: 16px;
-    font-family: "arial", Tahoma, sans-serif;
+    font-family: vnf-gotham-book, "arial", Tahoma, sans-serif;
+    src: url('vnf-gotham-book.ttf');
     line-height: 25px;
 }
 .title {
@@ -96,7 +97,8 @@ section#contact p {
     text-align: center;
     border: none;
     font-size: 16px;
-    font-family: "Arial", tahoma, sans-serif;
+    font-family: vnf-gotham-book, "arial", Tahoma, sans-serif;
+    src: url('vnf-gotham-book.ttf');
     float: right;
     margin-top: 15px;
     clear: both;

@@ -61,6 +61,8 @@ section#slider-top ul li p {
     left: 0;
     right: 0;
     margin: 0 auto;
+    font-family: vnf-gotham-book, "arial", Tahoma, sans-serif;
+    src: url('vnf-gotham-book.ttf');
 }
 
 section#slider-top .bx-controls-direction{
@@ -133,7 +135,8 @@ section#news-2columns div:first-child div {
     height: 40px;
     margin-bottom: 20px;
     margin-top: 11px;
-    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: vnf-gotham-book, "arial", Tahoma, sans-serif;
+    src: url('vnf-gotham-book.ttf');
     font-weight: bold;
 }
 
@@ -158,7 +161,8 @@ div#search p.search-label{
     padding-left: 20px;
     margin: 0;
     font-size: 14px;
-    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: vnf-gotham-book, "arial", Tahoma, sans-serif;
+    src: url('vnf-gotham-book.ttf');
 }
 
 section#news-2columns div#search div{
@@ -173,7 +177,8 @@ section#news-2columns div#search div{
 
 section#news-2columns div:first-child div p {
     margin: 0 0 0 30px;
-    font-family: "arial", times new roman, sans-serif;
+    font-family: vnf-gotham-book, "arial", Tahoma, sans-serif;
+    src: url('vnf-gotham-book.ttf');
 }
 
 /* # news-2columns - HomePage */
@@ -473,6 +478,8 @@ section#news-3columns .block-33 .sub-block {
         bottom: 0;
         right: 0;
         margin: 20px auto;
+        font-family: vnf-gotham-book, "arial", Tahoma, sans-serif;
+        src: url('vnf-gotham-book.ttf');
     }
 
     section#slider-bot ul li div.infor-sliderbot p:first-child,

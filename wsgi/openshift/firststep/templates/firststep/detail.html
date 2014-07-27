@@ -12,9 +12,11 @@
 				<img src="{{ MEDIA_URL }}{{ ja.small_img }}">
 			</div>
 			<div class="article-info">
+			{% if ja.category.cat_key != "tin-tuc" %}
 				<p>Diện tích: {{ja.area}} m²</p>
 				<p>Giá: {{ja.price}} Triệu</p>
 				<p>Khu vực: {{ja.location.name}}</p>
+			{%endif%}
 			</div>
 		</div>
 		<!-- # infor -->

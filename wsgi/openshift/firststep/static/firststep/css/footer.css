@@ -4,7 +4,8 @@ footer {
     background: black;
     color: white;
     text-align: center;
-    font-family: "arial", Times New Roman, sans-serif;
+    font-family: vnf-gotham-book, "arial", Tahoma, sans-serif;
+    src: url('vnf-gotham-book.ttf');
 }
 footer > ul {
     list-style: none;

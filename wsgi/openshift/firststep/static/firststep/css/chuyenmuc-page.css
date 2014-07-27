@@ -35,7 +35,8 @@ section#tin .infor-tin div {
     top: 0;
     text-align: left;
     font-size: 16px;
-    font-family: "Arial", Tahoma,sans-serif;
+    font-family: vnf-gotham-book, "arial", Tahoma, sans-serif;
+    src: url('vnf-gotham-book.ttf');
     left: 0;
     right: 0;
     bottom: 0;
