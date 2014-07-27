@@ -54,17 +54,16 @@ section#tin .infor-tin div a {
     overflow: hidden;
     /*padding: 10px 0;*/
 }
-/*section#tin .infor-tin div a:hover {*/
-    /*border: 1px solid blue;*/
-    /*color: blue;*/
-/*}*/
+
 .title-tin {
     font-size: 20px !important;
     margin: 0; padding: 0;
 }
-
+/* Search Form */
 div#news-search{
     overflow: hidden;
+    width: 720px;
+    margin: 0 auto;
 }
 
 #news-search div{
@@ -74,11 +73,25 @@ div#news-search{
     margin: 10px;
 }
 
-#news-search div#col-right, #news-search div#col-left{
-    margin: 0;
+#news-search div#col-left{
+    margin: 0 20px;
     width: auto;
 }
 
+#news-search div#col-right{
+    margin: 0;
+    width: 370px;
+}
+
+#news-search input{
+    height: 40px;
+    margin-right: 20px;
+}
+
+#news-search input[type=submit]{
+    margin-left: 20px;
+}
+/*END Search Form*/
 /* Trang chuyen muc */
 
 @media (min-width: 1024px) {
@@ -145,6 +158,43 @@ div#news-search{
     section#tin .infor-tin div p {
         margin: 0 0 10px 0 !important;
     }
+
+    div#news-search{
+        width: auto;
+    }
+
+    #news-search div#col-left{
+        width: 100%;
+        margin: 10px 10px 0 10px;
+    }
+
+    #news-search div#col-right{
+        width: 100%;
+        margin: 0 10px 10px 10px;
+    }
+
+    #news-search select.cus-select-search{
+        width: 90%;
+    }
+
+
+    #news-search input{
+        height: 40px;
+        margin-right: 5%;
+        width: 40%;
+    }
+
+    #news-search input:nth-child(odd){
+        margin-right: 0;
+        width: 45%;
+        height: 40px;
+    }
+
+    #news-search input[type=submit]{
+        margin-left: 10px;
+        width: 90%;
+    }
+
 }
 
 @media only screen and (max-width: 400px) {

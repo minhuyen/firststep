@@ -141,9 +141,9 @@ section#news-2columns div#search div.type{
     width: 50%;
 }
 
-section#news-2columns div#search div.type select{
+select.cus-select-search{
     width: 100%;
-    border: 1px solid #fff;
+    border: 1px solid #888;
     line-height: 40px;
     height: 40px;
 
@@ -154,7 +154,7 @@ div#search div.type input{
     width: 100%;
 }
 
-div#search p.label{
+div#search p.search-label{
     padding-left: 20px;
     margin: 0;
     font-size: 14px;
@@ -193,6 +193,7 @@ section#news-3columns .block-33 {
     padding:0 0 35% 0;
     float: left;
     margin: 0;
+    overflow: hidden;
 }
 section#news-3columns .block-33 .bg-gray {
     background: black;
@@ -254,7 +255,27 @@ section#news-3columns .block-33 a {
     background: #000000;
 }
 /* # news-3columns - HomePage */
+section#news-3columns .block-33 img{
+    -webkit-transition: all 1s ease; /* Safari and Chrome */
+    -moz-transition: all 1s ease; /* Firefox */
+    -ms-transition: all 1s ease; /* IE 9 */
+    -o-transition: all 1s ease; /* Opera */
+    transition: all 1s ease;
+}
 
+section#news-3columns .block-33:hover img{
+    -webkit-transform:scale(1.25); /* Safari and Chrome */
+    -moz-transform:scale(1.25); /* Firefox */
+    -ms-transform:scale(1.25); /* IE 9 */
+    -o-transform:scale(1.25); /* Opera */
+    transform:scale(1.25);
+}
+
+/*Hover zoom in image*/
+
+
+
+/* End hover zoom in image*/
 
 
 /* slider-bot home */
