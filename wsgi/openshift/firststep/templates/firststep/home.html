@@ -94,10 +94,12 @@
                 </div>
                 <div class="block-33">
                     <div class=" bg-gray">
-                        <p class="category-name">{{ categoryName2 }}</p>
-                        <p class="title">{{ list2.0.title }}</p>
-                        <p class="sum">{{ list2.0.summary }}</p>
-                        <a href="{% url 'firststep:detail' list2.0.id %}" data-text="read more">read more</a>
+                        <div class="sub-block">
+                            <p class="category-name">{{ categoryName2 }}</p>
+                            <p class="title">{{ list2.0.title }}</p>
+                            <p class="sum">{{ list2.0.summary|truncatewords:35 }}</p>
+                            <a href="{% url 'firststep:detail' list2.0.id %}" data-text="read more">read more</a>
+                        </div>
                     </div>
                 </div>
         {% endif %}
@@ -107,10 +109,12 @@
                 </div>
                 <div class="block-33">
                     <div class=" bg-gray">
-                        <p class="category-name">{{ categoryName3 }}</p>
-                        <p class="title">{{ list3.0.title }}</p>
-                        <p class="sum">{{ list3.0.summary }}</p>
-                        <a href="{% url 'firststep:detail' list3.0.id %}" data-text="read more">read more</a>
+                        <div class="sub-block">
+                            <p class="category-name">{{ categoryName3 }}</p>
+                            <p class="title">{{ list3.0.title }}</p>
+                            <p class="sum">{{ list3.0.summary|truncatewords:35 }}</p>                      
+                            <a href="{% url 'firststep:detail' list3.0.id %}" data-text="read more">read more</a>
+                        </div>
                     </div>
                 </div>
         {% endif %}
@@ -120,10 +124,12 @@
                 </div>
                 <div class="block-33">
                     <div class=" bg-gray">
-                        <p class="category-name">{{ categoryName4 }}</p>
-                        <p class="title">{{ list4.0.title }}</p>
-                        <p class="sum">{{ list4.0.summary }}</p>
-                        <a href="{% url 'firststep:detail' list4.0.id %}" data-text="read more">read more</a>
+                        <div class="sub-block">
+                            <p class="category-name">{{ categoryName4 }}</p>
+                            <p class="title">{{ list4.0.title }}</p>
+                            <p class="sum">{{ list4.0.summary|truncatewords:35  }}</p>
+                            <a href="{% url 'firststep:detail' list4.0.id %}" data-text="read more">read more</a>
+                        </div>
                     </div>
                 </div>
         {% endif %}
@@ -137,7 +143,7 @@
                     <div class="bg"></div>
                     <div class="infor-sliderbot">
                         <p>{{ categoryName5 }}</p>
-                        <p>{{ ja.title }}</p>
+                        <p ><a style="color: white !important;text-decoration: none !important;" href="{% url 'firststep:detail' ja.id %}">{{ ja.title }}</a></p>
                         <p>{{ ja.summary }}</p>
                     </div>
                 </li>
