@@ -9,8 +9,8 @@
             <div id="col-left">
                 <div>
                     <p><b>Loại sản phẩm:</b></p>
-                    <select name="category">
-                        <option value="0">----Chọn----</option>
+                    <select name="category" class="cus-select-search">
+{#                        <option value="0">----Chọn----</option>#}
                         {% if cats %}
                             {% for cat in cats %}
                                 {% ifequal cat.id|slugify category_id %}
@@ -25,7 +25,7 @@
                 </div>
                 <div>
                     <p><b>Quận:</b></p>
-                    <select name="location">
+                    <select name="location" class="cus-select-search">
                         <option value="0">----Chọn----</option>
                         {% if locations %}
                             {% for lo in locations %}

@@ -165,7 +165,7 @@ def search(request):
         except Location.DoesNotExist:
             locations = []
         check = False
-        journalArticels= JournalArticle.objects
+        journalArticels= JournalArticle.objects.all()
         if category and category != "0":
             check = True
             journalArticels = JournalArticle.objects.filter(category_id=category)
@@ -185,8 +185,8 @@ def search(request):
             check = True
             journalArticels = journalArticels.filter(area__lte=area1)
 
-        if check != True:
-            journalArticels = []
+        #if check != True:
+        #    journalArticels = []
         #print("query: %s" %journalArticels.query)
         context = {'list': journalArticels, "search": 1, "cats": cats, "locations": locations, "category_id": category,
                    "location_id": location, "price": price, "price1": price1, "area": area, "area1": area1}
