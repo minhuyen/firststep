@@ -228,11 +228,11 @@ section#news-3columns .block-33 .bg-gray:after {
     position: absolute;
     width: 0;
 
-    border: 30px solid transparent;
+    border: 15px solid transparent;
     border-bottom-color: #000;
     bottom: 100%;
     left: 50%;
-    margin-left: -30px;
+    margin-left: -15px;
     z-index: 1;
 }
 
@@ -242,11 +242,11 @@ section#news-3columns .block-33 .bg-gray-bottom:after {
     position: absolute;
     width: 0;
 
-    border: 30px solid transparent;
+    border: 15px solid transparent;
     border-top-color: #000;
     top: 100%;
     left: 50%;
-    margin-left: -30px;
+    margin-left: -15px;
     z-index: 1;
 }
 
