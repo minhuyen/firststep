@@ -34,7 +34,11 @@
             <section id="news-2columns">
                 <div>
                     <img src="{{ MEDIA_URL }}{{ list1.0.article_img }}">
-                    <div><p>{{ categoryName1 }}</p></div>
+                    <div>
+                        <p class="title">{{ categoryName1 }}</p>
+                        <p class="summary">{{ list1.0.summary|truncatewords:35 }}</p>
+                        <a href="{% url 'firststep:detail' list1.0.id %}" data-text="read more">read more</a>
+                    </div>
                 </div>
                 <!-- # First div -->
                 <div id="search">
