@@ -95,25 +95,30 @@ div#news-search{
 
 /* Lac lu */
 
-/*.left-img .infor-tin {*/
-    /*margin-left: 62%;*/
-    /*width: 38%;*/
-/*}*/
-/*section#tin .imgTin {*/
-    /*position: absolute;*/
-    /*width: 66%;*/
-    /*padding-bottom: 33%;*/
-    /*float: left;*/
-/*}*/
+.left-img .infor-tin {
+margin-left: 62%;
+width: 38%;
+}
+section#tin .imgTin {
+position: absolute;
+width: 66%;
+padding-bottom: 33%;
+float: left;
+}
 
-/*section#tin .infor-tin {*/
-    /*position: relative;*/
-    /*width: 34%;*/
-    /*padding-bottom: 33%;*/
-    /*float: left;*/
-    /*background-color: white;*/
-    /*overflow: hidden;*/
-/*}*/
+section#tin .infor-tin {
+position: relative;
+width: 34%;
+padding-bottom: 33%;
+float: left;
+background-color: white;
+overflow: hidden;
+z-index: 1000;
+}
+
+.right-img .imgTin {
+margin-left: 34%;
+}
 /*END Search Form*/
 /* Trang chuyen muc */
 
