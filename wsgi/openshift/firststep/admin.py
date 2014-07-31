@@ -56,7 +56,21 @@ class ContactInfoAdmin(admin.ModelAdmin):
 
 
 class HomeAdminForm(forms.ModelForm):
-    title = forms.CharField(widget=forms.Textarea)
+    class Meta:
+        model = JournalArticle
+        widgets = {
+            'title': RedactorEditor(
+                redactor_options={'lang': 'en',
+                                  'focus': 'true',
+                                  "imageUpload": "false",
+                                  "linkFileUpload": "false",
+                                  "fileUpload": "false", },
+                upload_to='tmp/',
+                allow_file_upload=False,
+                allow_image_upload=False
+            ),
+        }
+
 
 class HomeAdmin(admin.ModelAdmin):
     form = HomeAdminForm

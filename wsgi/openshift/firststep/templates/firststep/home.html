@@ -8,7 +8,10 @@
             {% for ja in list6 %}
                 <li><img src="{{ MEDIA_URL}}{{ ja.show_img }}">
                     <a href="{{ ja.category.get_absolute_url }}" data-text="read more">read more</a>
-                    <p>{{ ja.title}}</p>
+                        {% autoescape off %}
+                            {{ ja.title }}
+                        {% endautoescape %}
+
                 </li>
             {% endfor %}
             </ul>
