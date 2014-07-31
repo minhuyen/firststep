@@ -29,6 +29,15 @@ section#slider-top ul li div {
     z-index: 1;
 }
 
+section#slider-top ul li div.top-title{
+    background: transparent;
+    opacity: 1;
+    height: 100px;
+    width: 100%;
+    margin: auto;
+    top: 45%;
+}
+
 section#slider-top ul li a {
     border: 1px solid white;
     z-index: 4;
@@ -63,6 +72,10 @@ section#slider-top ul li p {
     margin: 0 auto;
     font-family: vnf-gotham-book, "arial", Tahoma, sans-serif;
     src: url('vnf-gotham-book.ttf');
+}
+
+section#slider-top ul li div.top-title p{
+    position: relative;
 }
 
 section#slider-top .bx-controls-direction{
@@ -406,8 +419,12 @@ section#news-3columns .block-33:hover img{
 
 /* slider-bot home */
 section#slider-bot {
-    margin-bottom: -60px;
+    margin-bottom: 0px;
     overflow: hidden;
+}
+
+section#slider-bot .bx-wrapper{
+    margin: 0 auto;
 }
 section#slider-bot ul li {
     position: relative !important;

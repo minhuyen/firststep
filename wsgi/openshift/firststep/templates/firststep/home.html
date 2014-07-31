@@ -8,9 +8,12 @@
             {% for ja in list6 %}
                 <li><img src="{{ MEDIA_URL}}{{ ja.show_img }}">
                     <a href="{{ ja.category.get_absolute_url }}" data-text="read more">read more</a>
-                        {% autoescape off %}
-                            {{ ja.title }}
-                        {% endautoescape %}
+                        <div class="top-title">
+                            {% autoescape off %}
+                                <p>{{ ja.title }}</p>
+                            {% endautoescape %}
+
+                        </div>
 
                 </li>
             {% endfor %}
@@ -28,7 +31,7 @@
      //          pause: 2000
                 mode: 'vertical',
                 slideMargin: 0,
-                auto: true,
+                auto: false,
                 pause: 5000
 			});
 		});
