@@ -246,7 +246,7 @@ div#search div.type input{
 }
 
 div#search p.search-label{
-    padding-left: 20px;
+    padding-left: 30px;
     margin: 0;
     font-size: 14px;
     font-family: vnf-gotham-book, "arial", Tahoma, sans-serif;
@@ -257,8 +257,18 @@ section#news-2columns div#search div{
     position: relative;
     width: 100%;
     float: left;
-    padding: 13px 25px 13px 20px;
+    padding: 13px 30px 13px 30px;
 }
+
+section#news-2columns div#search div.type.left{
+    padding: 13px 15px 13px 30px;
+}
+
+section#news-2columns div#search div.type.right{
+    padding: 13px 30px 13px 15px;
+}
+
+
 
 /* End Search Form*/
 
