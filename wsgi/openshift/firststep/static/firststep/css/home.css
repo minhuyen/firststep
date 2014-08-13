@@ -668,11 +668,11 @@ section#news-3columns .block-33 .sub-block {
     }
 
     section#news-3columns .block-33 .bg-gray:after {
-        border-top-color: #000;
+        border-bottom-color: transparent;
     }
 
     section#news-3columns .block-33 .bg-gray-bottom:after {
-        border-bottom-color: #000;
+        border-top-color: transparent;
     }
 
     /*end add arrow on image */
