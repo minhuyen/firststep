@@ -350,10 +350,10 @@ section#news-3columns .block-33 .bg-gray-bottom:after {
 
 section#news-3columns .block-33 img {
     position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
+    width: 210%;
+    height: auto;
+    top: -20%;
+    left: -30%;
 }
 
 section#news-3columns .block-33 .category-name {
