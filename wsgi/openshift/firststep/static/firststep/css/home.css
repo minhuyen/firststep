@@ -308,7 +308,7 @@ section#news-3columns .block-33.gray{
 }
 
 section#news-3columns .block-33 .bg-gray, section#news-3columns .block-33 .bg-gray-bottom{
-    background: black;
+    background: #69dfcf;
     position: absolute;
     width: 100%;
     height: 100%;
@@ -398,7 +398,7 @@ section#news-3columns .block-33 a {
     font-size: 16px;
     line-height: 40px;
     overflow: hidden;
-    background: #000000;
+    background: #69dfcf;
 }
 
 section#news-3columns .block-33{
@@ -541,7 +541,7 @@ section#news-3columns .block-33 .sub-block {
 
     section#news-3columns .block-33 a:after {
         content: attr(data-text);
-        color: #000;
+        color: #69dfcf;
         position: absolute;
         left: 0;
         right: 0;
