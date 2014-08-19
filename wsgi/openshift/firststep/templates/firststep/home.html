@@ -55,9 +55,9 @@
                     </div>
                 </div>
                 <!-- # First div -->
-                    <div id="search">
-                        <!-- <img src="{{ MEDIA_URL }}{{ list1.0.small_img }}"> -->
-                        <form action="{% url 'search' %}" method="post">
+                    <div>
+                        <a href="{% url 'search' %}"><img style="width: 100%;" src="{% static 'firststep/images/search.jpg' %}"></a>
+                        <!--<form action="{% url 'search' %}" method="post">
                             {% csrf_token %}
                             <h3>Tìm kiếm</h3>
                             <div class="type left">
@@ -101,7 +101,7 @@
                             </div>
 
                         </form>
-                    </div>
+                    </div> -->
                 <!-- # Last Div -->
             </section>
     {% endif %}

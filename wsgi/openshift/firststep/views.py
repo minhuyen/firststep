@@ -142,6 +142,15 @@ def contact(request):
 
 
 def search(request):
+    try:
+        cats = Category.objects.filter(parent=None).order_by('position')
+    except Category.DoesNotExist:
+        cats = []
+
+    try:
+        locations = Location.objects.all().order_by('position')
+    except Location.DoesNotExist:
+        locations = []
     if request.method == "POST":
         category = request.POST.get("category", 0)
         location = request.POST.get("location", 0)
@@ -155,15 +164,7 @@ def search(request):
         print('price1: %s' % price1)
         print('area: %s' % area)
         print('area1: %s' % area1)
-        try:
-            cats = Category.objects.filter(parent=None).order_by('position')
-        except Category.DoesNotExist:
-            cats = []
 
-        try:
-            locations = Location.objects.all().order_by('position')
-        except Location.DoesNotExist:
-            locations = []
         check = False
         journalArticels= JournalArticle.objects.all()
         if category and category != "0":
@@ -190,9 +191,10 @@ def search(request):
         #print("query: %s" %journalArticels.query)
         context = {'list': journalArticels, "search": 1, "cats": cats, "locations": locations, "category_id": category,
                    "location_id": location, "price": price, "price1": price1, "area": area, "area1": area1}
-        print journalArticels
+        #print journalArticels
         return render(request, 'firststep/news.html', context)
     else:
-        return HttpResponseRedirect(reverse('home'))
+        #return HttpResponseRedirect(reverse('home'))
+        return render(request, 'firststep/news.html', {"search": 1, "cats": cats, "locations": locations})
 
 
