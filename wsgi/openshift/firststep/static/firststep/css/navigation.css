@@ -1,5 +1,5 @@
 .navbar-default {
-    background: #000000;
+    background: #4fb1a1;
     margin: 0 auto;
     max-width: 1024px;
     border: none;
@@ -18,7 +18,7 @@
 
 .navbar-default .navbar-toggle:hover,
 .navbar-default .navbar-toggle:focus {
-    background: #000000;
+    background: #4fb1a1;
 }
 
 .navbar-default .navbar-toggle .icon-bar {
@@ -40,14 +40,14 @@
 }
 
 .dropdown-menu > li:first-child {
-    border-top: 1px solid #000000;
+    border-top: 1px solid #4fb1a1;
 }
 .dropdown-menu > li:last-child {
     border-bottom: none;
 }
 
 .dropdown-menu > li > a{
-    background: #000000;
+    background: #4fb1a1;
     color: #ffffff;
     padding: 10px 0 10px 40px;
 }
@@ -75,6 +75,10 @@
     display: none;
 }
 
+.navbar-nav>li>a:hover {
+    color: #fff !important;
+}
+
 @media (min-width: 1024px) {
     .navbar .navbar-nav {
         width: 900px;
@@ -89,7 +93,7 @@
 
      .navbar-nav > li > a:after{
         content: attr(data-text);
-        color: #000;
+        color: #4fb1a1;
         position: absolute;
         left: 0;
         right: 0;
@@ -123,7 +127,7 @@
     }
      .dropdown-menu > li > a:after{
         content: attr(data-text);
-        color: #000;
+        color: #4fb1a1;
         position: absolute;
         left: 0;
         right: 0;

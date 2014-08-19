@@ -40,12 +40,13 @@ section#tin .infor-tin div {
     left: 0;
     right: 0;
     bottom: 0;
+    color: #4fb1a1;
 }
 section#tin .infor-tin div a {
     width: 96px;
     height: 40px;
-    border: 1px solid #000000;
-    color: #000000;
+    border: 1px solid #4fb1a1;
+    color: #4fb1a1;
     text-align: center;
     position: relative;
     display: block;
@@ -147,7 +148,7 @@ margin-left: 34%;
         -ms-transition: -ms-transform 0.85s cubic-bezier(0.19, 1, 0.22, 1);
         transition: transform 0.85s cubic-bezier(0.19, 1, 0.22, 1);
         text-align: center;
-        background: #000;
+        background: #4fb1a1;
         height: 40px;
     }
 
@@ -162,7 +163,7 @@ margin-left: 34%;
         -o-transform: translate3d(0, 0, 0);
         -ms-transform: translate3d(0, 0, 0);
         transform: translate3d(0, 0, 0);
-        border: 1px solid #000000;
+        border: 1px solid #4fb1a1;
         /*padding:15px 0;*/
     }
     

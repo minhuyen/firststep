@@ -24,7 +24,7 @@ section#slider-bot ul li div.bg  {
     top: 0; left: 0;
 }
 section#slider-top ul li div {
-    background: black;
+    background: #4fb1a1;
     opacity: 0.5;
     z-index: 1;
 }
@@ -54,7 +54,7 @@ section#slider-top ul li a {
     text-decoration: none;
     font-size: 16px;
     line-height: 40px;
-    background: #000000;
+    background: #4fb1a1;
     overflow: hidden;
 }
 
@@ -166,12 +166,12 @@ section#news-2columns div:first-child div a {
     font-size: 16px;
     line-height: 40px;
     overflow: hidden;
-    background: #000000;
+    background: #4fb1a1;
 }
 
 section#news-2columns div:first-child div a:after {
     content: attr(data-text);
-    color: #000;
+    color: #4fb1a1;
     position: absolute;
     left: 0;
     right: 0;
@@ -207,7 +207,7 @@ section#news-2columns div:first-child div a:hover:after {
 
 /* Start Search Form */
 #search{
-    background-color: #181818;
+    background-color: #4fb1a1;
 }
 
 #search h3{
@@ -308,7 +308,7 @@ section#news-3columns .block-33.gray{
 }
 
 section#news-3columns .block-33 .bg-gray, section#news-3columns .block-33 .bg-gray-bottom{
-    background: #69dfcf;
+    background: #4fb1a1;
     position: absolute;
     width: 100%;
     height: 100%;
@@ -322,7 +322,7 @@ section#news-3columns .block-33 .bg-gray:after {
     width: 0;
 
     border: 15px solid transparent;
-    border-bottom-color: #000;
+    border-bottom-color: #4fb1a1;
     bottom: 100%;
     left: 50%;
     margin-left: -15px;
@@ -336,7 +336,7 @@ section#news-3columns .block-33 .bg-gray-bottom:after {
     width: 0;
 
     border: 15px solid transparent;
-    border-top-color: #000;
+    border-top-color: #4fb1a1;
     top: 100%;
     left: 50%;
     margin-left: -15px;
@@ -398,7 +398,7 @@ section#news-3columns .block-33 a {
     font-size: 16px;
     line-height: 40px;
     overflow: hidden;
-    background: #69dfcf;
+    background: #4fb1a1;
 }
 
 section#news-3columns .block-33{
@@ -504,7 +504,7 @@ section#news-3columns .block-33 .sub-block {
 @media (min-width: 1024px) {
     section#slider-top ul li a:after {
         content: attr(data-text);
-        color: #000;
+        color: #4fb1a1;
         position: absolute;
         left: 0;
         right: 0;
@@ -541,7 +541,7 @@ section#news-3columns .block-33 .sub-block {
 
     section#news-3columns .block-33 a:after {
         content: attr(data-text);
-        color: #69dfcf;
+        color: #4fb1a1;
         position: absolute;
         left: 0;
         right: 0;

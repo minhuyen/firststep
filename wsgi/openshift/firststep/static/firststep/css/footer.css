@@ -1,7 +1,7 @@
 /* Footer */
 
 footer {
-    background: black;
+    background: #4fb1a1;
     color: white;
     text-align: center;
     font-family: vnf-gotham-book, "arial", Tahoma, sans-serif;
@@ -24,7 +24,7 @@ footer ul li {
 }
 
 footer ul li:last-child {
-    color: #292829;
+    color: #fff;
     float: right;
 }
 
@@ -34,6 +34,10 @@ footer ul li img {
     margin-right: 15px;
     /*position: absolute;*/
     /*margin-top: 18px;*/
+}
+
+footer a {
+    color: #fff;
 }
 
 /* Ipad > Iphone ngang */

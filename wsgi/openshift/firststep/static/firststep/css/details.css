@@ -4,6 +4,7 @@ section#detail{
     position: relative;
     overflow: hidden;
     margin: 60px auto;
+    color: #4fb1a1;
 }
 
 .title-detail {

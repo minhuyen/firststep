@@ -51,7 +51,7 @@ section#contact p {
 
 #firstname, #lastname {
     width: 160px;
-    border: 1px solid black;
+    border: 1px solid #4fb1a1;
     height: 20px;
     float: left;
     margin: 0 0 0 4px;
@@ -59,7 +59,7 @@ section#contact p {
 .left10 { margin:  0 0 0 10px !important; }
 #address, #mobile {
     width: 222px;
-    border: 1px solid black;
+    border: 1px solid #4fb1a1;
     height: 20px;
     float: left;
 }
@@ -77,7 +77,7 @@ section#contact p {
     width: 470px;
     float: right;
     height: 25px;
-    border: 1px solid black;
+    border: 1px solid #4fb1a1;
 }
 #contact .form textarea{
     width: 470px;
@@ -90,7 +90,7 @@ section#contact p {
     margin: 5px 0 20px 0 !important;
 }
 #contact .form button {
-    background: black;
+    background: #4fb1a1;
     color: white;
     width: 96px;
     height: 44px;
