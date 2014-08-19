@@ -1,5 +1,6 @@
 $(document).ready(function(){
-    $( ".left-img" ).hover(
+    if($(window).width()>= 1024){
+     $( ".left-img" ).hover(
         function() {
             $( this ).find( ".infor-tin" ).css('margin-left', '62%');
             $( this ).find( ".infor-tin" ).css('width', '38%');
@@ -16,5 +17,6 @@ $(document).ready(function(){
             $( this ).find( ".infor-tin" ).css('width', '34%');
         }
     );
+    }
 });
 

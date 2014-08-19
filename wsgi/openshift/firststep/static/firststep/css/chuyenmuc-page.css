@@ -97,35 +97,36 @@ div#news-search{
 
 /* Lac lu */
 
-.left-img .infor-tin {
-margin-left: 66%;
-width: 34%;
-}
-section#tin .imgTin {
-position: absolute;
-width: 66%;
-padding-bottom: 33%;
-float: left;
-}
+    /*.left-img .infor-tin {*/
+        /*margin-left: 66%;*/
+        /*width: 34%;*/
+    /*}*/
+    /*section#tin .imgTin {*/
+        /*position: absolute;*/
+        /*width: 66%;*/
+        /*padding-bottom: 33%;*/
+        /*float: left;*/
+    /*}*/
+    /**/
+    /*section#tin .infor-tin {*/
+        /*position: relative;*/
+        /*width: 34%;*/
+        /*padding-bottom: 33%;*/
+        /*float: left;*/
+        /*background-color: white;*/
+        /*overflow: hidden;*/
+        /*z-index: 1000;*/
+        /*webkit-transition: all 0.5s ease;*/
+        /*-moz-transition: all 0.5s ease;*/
+        /*-ms-transition: all 0.5s ease;*/
+        /*-o-transition: all 0.5s ease;*/
+        /*transition: all 0.5s ease;*/
+    /*}*/
+    /**/
+    /*.right-img .imgTin {*/
+        /*margin-left: 34%;*/
+    /*}*/
 
-section#tin .infor-tin {
-    position: relative;
-    width: 34%;
-    padding-bottom: 33%;
-    float: left;
-    background-color: white;
-    overflow: hidden;
-    z-index: 1000;
-    webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -ms-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
-}
-
-.right-img .imgTin {
-margin-left: 34%;
-}
 /*END Search Form*/
 /* Trang chuyen muc */
 
@@ -166,6 +167,37 @@ margin-left: 34%;
         transform: translate3d(0, 0, 0);
         border: 1px solid #4fb1a1;
         /*padding:15px 0;*/
+    }
+    /* Lac lu */
+
+    .left-img .infor-tin {
+        margin-left: 66%;
+        width: 34%;
+    }
+    section#tin .imgTin {
+        position: absolute;
+        width: 66%;
+        padding-bottom: 33%;
+        float: left;
+    }
+
+    section#tin .infor-tin {
+        position: relative;
+        width: 34%;
+        padding-bottom: 33%;
+        float: left;
+        background-color: white;
+        overflow: hidden;
+        z-index: 1000;
+        webkit-transition: all 0.5s ease;
+        -moz-transition: all 0.5s ease;
+        -ms-transition: all 0.5s ease;
+        -o-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+    }
+
+    .right-img .imgTin {
+        margin-left: 34%;
     }
     
 }
