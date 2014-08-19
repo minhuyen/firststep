@@ -20,7 +20,7 @@ class Category(models.Model):
 
     def get_absolute_url(self):
         if self.parent_id:
-            return "/%s/%s/" % (self.parent.cat_key, self.cat_key)
+            return "/%s/" % (self.cat_key, )
         else:
             if self.cat_key == "":
                 return ""
@@ -95,6 +95,7 @@ class ContactInfo(models.Model):
 
     def __unicode__(self):
         return self.name   
+
 
 class Home(models.Model):
     category = models.ForeignKey(Category)

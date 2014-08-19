@@ -7,7 +7,7 @@
 		    <ul class="bxslider-top">
             {% for ja in list6 %}
                 <li><img src="{{ MEDIA_URL}}{{ ja.show_img }}">
-                    <a href="{{ ja.category.get_absolute_url }}" data-text="read more">read more</a>
+                    <a href="{% url 'viewCategory' ja.category.cat_key %}" data-text="read more">read more</a>
                         <div class="top-title">
                             {% autoescape off %}
                                 <p>{{ ja.title }}</p>
