@@ -16,12 +16,20 @@ logger = logging.getLogger(__name__)
 def home(request):
     try:
         category1 = Category.objects.get(cat_key="dat-nen-du-an")
+        subcategorys = Category.objects.filter(parent_id=category1.id)
     except Category.DoesNotExist:
         categoryName1 = ""
         list1 = []
     else:
-        categoryName1 = category1.name
-        list1 = category1.journalarticle_set.order_by('-pub_date')[:4]
+        ids = []
+        for subcat in subcategorys:
+            ids.append(subcat.id)
+
+        list1 = JournalArticle.objects.filter(category_id__in=ids).order_by('-pub_date')[:1]
+        if(list1):
+            categoryName1 = list1[0].category.name
+        else:
+            categoryName1 = ""
 
     try:
         category2 = Category.objects.get(cat_key="biet-thu-ven-bien")
