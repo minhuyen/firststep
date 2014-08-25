@@ -151,7 +151,7 @@ def contact(request):
 
 def search(request):
     try:
-        cats = Category.objects.filter(parent=None).order_by('position')
+        cats = Category.objects.exclude(parent=None).order_by('position')
     except Category.DoesNotExist:
         cats = []
 
